@@ -1,0 +1,120 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UI/Haggle.gd" type="Script" id=1]
+
+[node name="Haggle" type="NinePatchRect"]
+margin_left = 70.0
+margin_top = 50.0
+margin_right = 570.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 500, 100 )
+patch_margin_left = 15
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 16
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Display" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -126.0
+margin_right = 240.0
+margin_bottom = 126.0
+custom_constants/separation = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Display"]
+margin_right = 480.0
+margin_bottom = 14.0
+text = "The Customer wants to buy:"
+align = 1
+
+[node name="Preview" type="CenterContainer" parent="Display"]
+margin_top = 26.0
+margin_right = 480.0
+margin_bottom = 90.0
+
+[node name="PreviewImage" type="TextureRect" parent="Display/Preview"]
+margin_left = 208.0
+margin_right = 272.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+
+[node name="ItemName" type="Label" parent="Display"]
+margin_top = 102.0
+margin_right = 480.0
+margin_bottom = 116.0
+text = "Medicine"
+align = 1
+
+[node name="Dial" type="HBoxContainer" parent="Display"]
+margin_top = 128.0
+margin_right = 480.0
+margin_bottom = 152.0
+
+[node name="HundredThousand" type="SpinBox" parent="Display/Dial"]
+margin_right = 74.0
+margin_bottom = 24.0
+max_value = 9.0
+
+[node name="TenThousand" type="SpinBox" parent="Display/Dial"]
+margin_left = 78.0
+margin_right = 152.0
+margin_bottom = 24.0
+max_value = 9.0
+
+[node name="Thousand" type="SpinBox" parent="Display/Dial"]
+margin_left = 156.0
+margin_right = 230.0
+margin_bottom = 24.0
+max_value = 9.0
+
+[node name="Hundred" type="SpinBox" parent="Display/Dial"]
+margin_left = 234.0
+margin_right = 308.0
+margin_bottom = 24.0
+max_value = 9.0
+
+[node name="Ten" type="SpinBox" parent="Display/Dial"]
+margin_left = 312.0
+margin_right = 386.0
+margin_bottom = 24.0
+max_value = 9.0
+
+[node name="One" type="SpinBox" parent="Display/Dial"]
+margin_left = 390.0
+margin_right = 464.0
+margin_bottom = 24.0
+max_value = 9.0
+
+[node name="Percentage" type="Label" parent="Display"]
+margin_top = 164.0
+margin_right = 480.0
+margin_bottom = 184.0
+rect_min_size = Vector2( 0, 20 )
+text = "100% of Wholesale Price"
+align = 1
+valign = 1
+
+[node name="Offer" type="Button" parent="Display"]
+margin_top = 196.0
+margin_right = 480.0
+margin_bottom = 216.0
+text = "Make the Offer"
+
+[node name="Decline" type="Button" parent="Display"]
+margin_top = 228.0
+margin_right = 480.0
+margin_bottom = 248.0
+text = "Refuse Deal"
+
+[connection signal="pressed" from="Display/Offer" to="." method="_on_Offer_pressed"]
+[connection signal="pressed" from="Display/Decline" to="." method="_on_Decline_pressed"]
