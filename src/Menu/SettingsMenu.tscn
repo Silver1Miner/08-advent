@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/Menu/SettingsMenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/theme/UI.tres" type="Theme" id=2]
 
 [node name="SettingsMenu" type="ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 2 )
 color = Color( 0, 0, 0, 0.784314 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -17,8 +19,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -75.0
-margin_top = -30.0
+margin_top = -60.0
 margin_right = 75.0
+margin_bottom = -30.0
 rect_min_size = Vector2( 150, 30 )
 text = "BACK"
 
@@ -33,37 +36,38 @@ __meta__ = {
 
 [node name="MusicLabel" type="Label" parent="VolumeControls"]
 margin_right = 200.0
-margin_bottom = 14.0
+margin_bottom = 19.0
 text = "Music"
 
 [node name="MusicVolume" type="HSlider" parent="VolumeControls"]
-margin_top = 18.0
+margin_top = 23.0
 margin_right = 200.0
-margin_bottom = 34.0
+margin_bottom = 44.0
 rect_min_size = Vector2( 200, 0 )
 max_value = 1.0
 step = 0.1
 
 [node name="SoundLabel" type="Label" parent="VolumeControls"]
-margin_top = 38.0
+margin_top = 48.0
 margin_right = 200.0
-margin_bottom = 69.0
+margin_bottom = 89.0
 text = "
 Sound"
 
 [node name="SoundVolume" type="HSlider" parent="VolumeControls"]
-margin_top = 73.0
+margin_top = 93.0
 margin_right = 200.0
-margin_bottom = 89.0
+margin_bottom = 114.0
 max_value = 1.0
 step = 0.1
 
 [node name="Credits" type="Label" parent="."]
 margin_left = 393.0
-margin_top = 45.0
+margin_top = 30.0
 margin_right = 593.0
-margin_bottom = 323.0
+margin_bottom = 335.0
 rect_min_size = Vector2( 200, 0 )
+theme = ExtResource( 2 )
 text = "Credits
 
 Advent
@@ -76,7 +80,8 @@ kenney.nl
 unsplash.com
 fonts.google.com
 
-Powered by Godot Engine"
+Powered by:
+Godot Engine"
 align = 1
 valign = 1
 __meta__ = {

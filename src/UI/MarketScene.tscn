@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
+[ext_resource path="res://src/UI/MarketScene.gd" type="Script" id=2]
+[ext_resource path="res://src/UI/UIComponents/Haggle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UI/UIComponents/Textbox.tscn" type="PackedScene" id=4]
+
+[node name="MarketScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Haggle" parent="." instance=ExtResource( 3 )]
+
+[node name="Textbox" parent="." instance=ExtResource( 4 )]
