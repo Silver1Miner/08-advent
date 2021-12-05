@@ -56,9 +56,9 @@ func _unhandled_input(event) -> void:
 		end_text()
 
 func end_text() -> void:
-	emit_signal("text_finished")
 	nametag.text = ""
 	text.clear()
+	emit_signal("text_finished")
 
 func _on_timer_timeout() -> void:
 	text.set_visible_characters(text.get_visible_characters()+1)

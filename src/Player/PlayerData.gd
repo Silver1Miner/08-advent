@@ -1,12 +1,23 @@
 extends Node
-# Player Data
 
-var cash := 1000
+var day := 2
+var cash := 4000
+var ap := 3
+var stats := {
+	"hp": 100,
+	"miss_streak": 0,
+	"misses": 0,
+}
 var inventory := {
 	"Medicine": 3,
 }
+var collected := {
+	"Medicine": true,
+}
 var current_scene := 0
-var day := 1
+var market_scene: PackedScene = preload("res://src/UI/MarketScene.tscn")
+var dialogue_scene: PackedScene = preload("res://src/UI/DialogueScene.tscn")
+var hub_scene: PackedScene = preload("res://src/UI/Hub.tscn")
 
 func _ready() -> void:
 	pass

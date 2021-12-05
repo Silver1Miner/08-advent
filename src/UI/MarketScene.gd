@@ -2,7 +2,6 @@ extends Control
 
 onready var haggle = $Haggle
 onready var textbox = $Textbox
-var dialogue_scene: PackedScene  = preload("res://src/UI/DialogueScene.tscn")
 
 func _ready() -> void:
 	if haggle.connect("offer_refused", self, "_on_offer_refused") != OK:
@@ -13,7 +12,11 @@ func _ready() -> void:
 		push_error("UI signal connect fail")
 
 func go_to_dialogue() -> void:
-	if get_tree().change_scene_to(dialogue_scene) != OK:
+	if get_tree().change_scene_to(PlayerData.dialogue_scene) != OK:
+		push_error("fail to change scene")
+
+func go_to_hub() -> void:
+	if get_tree().change_scene_to(PlayerData.hub_scene) != OK:
 		push_error("fail to change scene")
 
 func _on_offer_refused() -> void:
