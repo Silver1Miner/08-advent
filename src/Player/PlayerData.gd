@@ -1,5 +1,7 @@
 extends Node
 
+var new_game = false
+var end_game = false
 var day := 2
 var cash := 4000
 var ap := 3
@@ -18,6 +20,8 @@ var current_scene := 0
 var market_scene: PackedScene = preload("res://src/UI/MarketScene.tscn")
 var dialogue_scene: PackedScene = preload("res://src/UI/DialogueScene.tscn")
 var hub_scene: PackedScene = preload("res://src/UI/Hub.tscn")
+var main_menu: PackedScene = preload("res://src/Menu/MainMenu.tscn")
+var credits: PackedScene = preload("res://src/UI/TextScroll.tscn")
 
 func _ready() -> void:
 	pass

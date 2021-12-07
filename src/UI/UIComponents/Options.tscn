@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
+[ext_resource path="res://src/UI/UIComponents/Options.gd" type="Script" id=2]
+
+[node name="Options" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+color = Color( 0, 0, 0, 0.705882 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="VBoxContainer" parent="."]
+margin_left = 400.0
+margin_top = 60.0
+margin_right = 600.0
+margin_bottom = 140.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="Button" parent="Options"]
+margin_right = 200.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 200, 30 )
+text = "Close"
+
+[node name="ToMainMenu" type="Button" parent="Options"]
+margin_top = 50.0
+margin_right = 200.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 30 )
+text = "Main Menu"
+
+[node name="VolumeControls" type="VBoxContainer" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 250.0
+margin_bottom = 139.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicLabel" type="Label" parent="VolumeControls"]
+margin_right = 200.0
+margin_bottom = 19.0
+text = "Music"
+
+[node name="MusicVolume" type="HSlider" parent="VolumeControls"]
+margin_top = 23.0
+margin_right = 200.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 200, 0 )
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="SoundLabel" type="Label" parent="VolumeControls"]
+margin_top = 48.0
+margin_right = 200.0
+margin_bottom = 89.0
+text = "
+Sound"
+
+[node name="SoundVolume" type="HSlider" parent="VolumeControls"]
+margin_top = 93.0
+margin_right = 200.0
+margin_bottom = 114.0
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[connection signal="pressed" from="Options/Close" to="." method="_on_Close_pressed"]
+[connection signal="pressed" from="Options/ToMainMenu" to="." method="_on_ToMainMenu_pressed"]
+[connection signal="value_changed" from="VolumeControls/MusicVolume" to="." method="_on_MusicVolume_value_changed"]
+[connection signal="value_changed" from="VolumeControls/SoundVolume" to="." method="_on_SoundVolume_value_changed"]

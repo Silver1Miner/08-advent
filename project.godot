@@ -19,6 +19,7 @@ config/windows_native_icon="res://icon.ico"
 [autoload]
 
 PlayerData="*res://src/Player/PlayerData.tscn"
+AudioManager="*res://src/Audio/AudioManager.tscn"
 
 [display]
 
