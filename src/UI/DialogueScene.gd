@@ -3,6 +3,7 @@ extends Control
 onready var textbox = $Textbox
 
 func _ready() -> void:
+	$HUD/Actions.visible = false
 	if textbox.connect("text_finished", self, "_on_text_finished") != OK:
 		push_error("UI signal connect fail")
 

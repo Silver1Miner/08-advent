@@ -1,7 +1,7 @@
 extends Control
 
 func _ready() -> void:
-	pass # Replace with function body.
+	$HUD/Actions.visible = true
 
 func go_to_dialogue() -> void:
 	if get_tree().change_scene_to(PlayerData.dialogue_scene) != OK:

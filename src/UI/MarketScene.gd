@@ -4,6 +4,7 @@ onready var haggle = $Haggle
 onready var textbox = $Textbox
 
 func _ready() -> void:
+	$HUD/Actions.visible = false
 	if haggle.connect("offer_refused", self, "_on_offer_refused") != OK:
 		push_error("UI signal connect fail")
 	if haggle.connect("offer_made", self, "_on_offer_made") != OK:
