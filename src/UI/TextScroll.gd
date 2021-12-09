@@ -92,12 +92,12 @@ var intro_text = [
 	[
 		"My sister loves Christmas.",
 	],[
-		".",
-		"Most residents on Hive are workers bound to these corporations.",
-		"But a small few choose a different life.",
+		"This year, she's been very sick.",
+		"",
+		"",
 	],[
 		",",
-		"."
+		"I want to give her the best Christmas ever."
 	]
 ]
 

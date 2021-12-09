@@ -12,6 +12,7 @@ var stats := {
 }
 var inventory := {
 	"Medicine": 3,
+	"Advent": 1,
 }
 var collected := {
 	"Medicine": true,

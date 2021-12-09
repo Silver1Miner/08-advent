@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
 [ext_resource path="res://src/UI/UIComponents/InventoryInfo.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://assets/Icons/fish_raw.png" type="Texture" id=8]
 [ext_resource path="res://assets/Icons/telescope.png" type="Texture" id=9]
 [ext_resource path="res://assets/Icons/rope.png" type="Texture" id=10]
+[ext_resource path="res://assets/Icons/book_open.png" type="Texture" id=11]
+[ext_resource path="res://src/Menu/SaveMenu.tscn" type="PackedScene" id=12]
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
@@ -66,9 +68,9 @@ expand = true
 
 [node name="MoneyLabel" type="Label" parent="Stats/Money"]
 margin_left = 24.0
-margin_right = 74.0
+margin_right = 94.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 50, 20 )
+rect_min_size = Vector2( 70, 20 )
 text = "99999"
 align = 2
 valign = 1
@@ -96,12 +98,13 @@ valign = 1
 
 [node name="Max" type="Label" parent="Stats/Time"]
 margin_left = 48.0
-margin_right = 78.0
+margin_right = 93.0
 margin_bottom = 19.0
-rect_min_size = Vector2( 30, 0 )
-text = "/ 4"
+rect_min_size = Vector2( 45, 0 )
+text = "/ 4 AP"
 
 [node name="Actions" type="VBoxContainer" parent="."]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -124.0
@@ -111,7 +114,7 @@ __meta__ = {
 }
 
 [node name="Inventory" type="HBoxContainer" parent="Actions"]
-margin_right = 124.0
+margin_right = 126.0
 margin_bottom = 20.0
 
 [node name="InventoryIcon" type="TextureRect" parent="Actions/Inventory"]
@@ -131,7 +134,7 @@ text = "Inventory"
 
 [node name="Market" type="HBoxContainer" parent="Actions"]
 margin_top = 24.0
-margin_right = 124.0
+margin_right = 126.0
 margin_bottom = 44.0
 
 [node name="MarketIcon" type="TextureRect" parent="Actions/Market"]
@@ -143,14 +146,14 @@ expand = true
 
 [node name="ToMarket" type="Button" parent="Actions/Market"]
 margin_left = 24.0
-margin_right = 124.0
+margin_right = 126.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 100, 20 )
-text = "Market (1 AP)"
+text = "Market (-1 AP)"
 
 [node name="Play" type="HBoxContainer" parent="Actions"]
 margin_top = 48.0
-margin_right = 124.0
+margin_right = 126.0
 margin_bottom = 68.0
 
 [node name="PlayIcon" type="TextureRect" parent="Actions/Play"]
@@ -165,11 +168,11 @@ margin_left = 24.0
 margin_right = 124.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 100, 20 )
-text = "Play (1 AP)"
+text = "Play (-1 AP)"
 
 [node name="Work" type="HBoxContainer" parent="Actions"]
 margin_top = 72.0
-margin_right = 124.0
+margin_right = 126.0
 margin_bottom = 92.0
 
 [node name="WorkIcon" type="TextureRect" parent="Actions/Work"]
@@ -184,11 +187,105 @@ margin_left = 24.0
 margin_right = 124.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 100, 20 )
-text = "Work (2 AP)"
+text = "Work -2 AP)"
+
+[node name="Save" type="HBoxContainer" parent="Actions"]
+margin_top = 96.0
+margin_right = 126.0
+margin_bottom = 116.0
+
+[node name="SaveIcon" type="TextureRect" parent="Actions/Save"]
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 11 )
+expand = true
+
+[node name="OpenSave" type="Button" parent="Actions/Save"]
+margin_left = 24.0
+margin_right = 124.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 100, 20 )
+text = "Advent"
+
+[node name="MarketActions" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -124.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buy" type="HBoxContainer" parent="MarketActions"]
+margin_right = 124.0
+margin_bottom = 20.0
+
+[node name="BuyIcon" type="TextureRect" parent="MarketActions/Buy"]
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="BuyMode" type="Button" parent="MarketActions/Buy"]
+margin_left = 24.0
+margin_right = 124.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 100, 20 )
+toggle_mode = true
+text = "Buy"
+
+[node name="Sell" type="HBoxContainer" parent="MarketActions"]
+margin_top = 24.0
+margin_right = 124.0
+margin_bottom = 44.0
+
+[node name="SellIcon" type="TextureRect" parent="MarketActions/Sell"]
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="SellMode" type="Button" parent="MarketActions/Sell"]
+margin_left = 24.0
+margin_right = 124.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 100, 20 )
+toggle_mode = true
+text = "Sell"
+
+[node name="Leave" type="HBoxContainer" parent="MarketActions"]
+margin_top = 48.0
+margin_right = 124.0
+margin_bottom = 68.0
+
+[node name="LeaveIcon" type="TextureRect" parent="MarketActions/Leave"]
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="LeaveMode" type="Button" parent="MarketActions/Leave"]
+margin_left = 24.0
+margin_right = 124.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 100, 20 )
+toggle_mode = true
+text = "Leave"
 
 [node name="Options" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="SaveMenu" parent="." instance=ExtResource( 12 )]
 visible = false
 
 [connection signal="toggled" from="Actions/Inventory/OpenInventory" to="." method="_on_OpenInventory_toggled"]
 [connection signal="pressed" from="Actions/Market/ToMarket" to="." method="_on_ToMarket_pressed"]
 [connection signal="pressed" from="Actions/Play/ToDialogue" to="." method="_on_ToDialogue_pressed"]
+[connection signal="pressed" from="Actions/Save/OpenSave" to="." method="_on_OpenSave_pressed"]
+[connection signal="pressed" from="MarketActions/Buy/BuyMode" to="." method="_on_BuyMode_pressed"]
+[connection signal="pressed" from="MarketActions/Sell/SellMode" to="." method="_on_SellMode_pressed"]
+[connection signal="pressed" from="MarketActions/Leave/LeaveMode" to="." method="_on_LeaveMode_pressed"]

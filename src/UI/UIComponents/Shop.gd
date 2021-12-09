@@ -12,10 +12,10 @@ func _ready() -> void:
 func set_mode(mode) -> void:
 	current_mode = mode
 	match current_mode:
-		shop_mode.BUY:
+		shop_mode.BUY: #0
 			$Display/Label.text = "Try to Buy:"
 			$Display/InventoryInfo.load_items(shop_inventory)
-		shop_mode.SELL:
+		shop_mode.SELL: #1
 			$Display/Label.text = "Try to Sell:"
 			$Display/InventoryInfo.load_items(PlayerData.inventory)
 

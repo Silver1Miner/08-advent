@@ -86,14 +86,14 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -62.5
-margin_top = -300.0
-margin_right = 62.5
-margin_bottom = -281.0
-text = "A Christmas Story"
+anchor_bottom = 0.5
+margin_left = -126.5
+margin_top = -100.0
+margin_right = 126.5
+margin_bottom = -81.0
+text = "A Story about Waiting for Christmas"
 __meta__ = {
 "_edit_use_anchors_": false
 }

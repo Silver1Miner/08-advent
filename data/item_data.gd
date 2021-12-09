@@ -12,7 +12,12 @@ func get_item_icon(id) -> String:
 var items = {
 	"Medicine": {
 		"base_price": 1000,
-		"description": "An important medicine",
+		"description": "An important medicine.",
 		"icon": "res://assets/Icons/water.png"
 	},
+	"Advent": {
+		"base_price": 4000,
+		"description": "A mysterious combination journal-advent calendar.",
+		"icon": "res://assets/Icons/book_open.png"
+	}
 }
