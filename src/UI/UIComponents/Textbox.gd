@@ -9,11 +9,7 @@ onready var text = $Panels/Center/Speech
 onready var avatar = $Panels/Left/Profile
 var text_dialogue = {
 	"0": {"name": "Test", "profile": "test",
-	"text": "The quick brown fox"},
-	"1": {"name": "Test", "profile": "test",
-	"text": "jumps over the lazy dog"},
-	"2": {"name": "Test", "profile": "test",
-	"text": "again and again"},
+	"text": "Placeholder"},
 }
 var profiles = {}
 
@@ -22,7 +18,7 @@ func _ready() -> void:
 	$Timer.autostart = true
 	if $Timer.connect("timeout", self, "_on_timer_timeout") != OK:
 		push_error("timer connect fail")
-	play_dialogue(text_dialogue)
+	#play_dialogue(text_dialogue)
 
 func play_dialogue(text_data) -> void:
 	visible = true

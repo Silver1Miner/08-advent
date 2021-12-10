@@ -18,14 +18,16 @@ func _ready() -> void:
 		push_error("UI signal connect fail")
 	if textbox.connect("text_finished", self, "_on_text_finished") != OK:
 		push_error("UI signal connect fail")
+	$Textbox.play_dialogue(
+		{"0": {"name": "Trader", "profile": "test",
+		"text": "Welcome to the Open Market. Haggle away."},}
+	)
 
 func go_to_dialogue() -> void:
-	if get_tree().change_scene_to(PlayerData.dialogue_scene) != OK:
-		push_error("fail to change scene")
+	$TransitionScene.transition_to(PlayerData.dialogue_scene)
 
 func go_to_hub() -> void:
-	if get_tree().change_scene_to(PlayerData.hub_scene) != OK:
-		push_error("fail to change scene")
+	$TransitionScene.transition_to(PlayerData.hub_scene)
 
 func _on_buy_mode() -> void:
 	$Shop.set_mode(0)

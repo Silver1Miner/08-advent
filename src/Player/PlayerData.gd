@@ -2,9 +2,10 @@ extends Node
 
 var new_game = false
 var end_game = false
-var day := 2
+var day := 1
 var cash := 4000
 var ap := 3
+var next_scene := 0
 var stats := {
 	"hp": 100,
 	"miss_streak": 0,

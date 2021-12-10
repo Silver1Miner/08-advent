@@ -28,14 +28,14 @@ visible = false
 
 [node name="Stats" type="VBoxContainer" parent="."]
 margin_left = 10.0
-margin_right = 106.0
+margin_right = 90.0
 margin_bottom = 104.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Date" type="HBoxContainer" parent="Stats"]
-margin_right = 96.0
+margin_right = 80.0
 margin_bottom = 20.0
 
 [node name="Day" type="Label" parent="Stats/Date"]
@@ -56,8 +56,9 @@ valign = 2
 
 [node name="Money" type="HBoxContainer" parent="Stats"]
 margin_top = 24.0
-margin_right = 96.0
+margin_right = 80.0
 margin_bottom = 44.0
+custom_constants/separation = 0
 
 [node name="MoneIcon" type="TextureRect" parent="Stats/Money"]
 margin_right = 20.0
@@ -67,18 +68,19 @@ texture = ExtResource( 4 )
 expand = true
 
 [node name="MoneyLabel" type="Label" parent="Stats/Money"]
-margin_left = 24.0
-margin_right = 94.0
+margin_left = 20.0
+margin_right = 80.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 70, 20 )
+rect_min_size = Vector2( 60, 20 )
 text = "99999"
 align = 2
 valign = 1
 
 [node name="Time" type="HBoxContainer" parent="Stats"]
 margin_top = 48.0
-margin_right = 96.0
+margin_right = 80.0
 margin_bottom = 68.0
+custom_constants/separation = 0
 
 [node name="TimeIcon" type="TextureRect" parent="Stats/Time"]
 margin_right = 20.0
@@ -88,23 +90,22 @@ texture = ExtResource( 5 )
 expand = true
 
 [node name="APLabel" type="Label" parent="Stats/Time"]
-margin_left = 24.0
-margin_right = 44.0
+margin_left = 20.0
+margin_right = 35.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 20, 20 )
-text = "4"
+rect_min_size = Vector2( 15, 20 )
+text = "3"
 align = 2
 valign = 1
 
 [node name="Max" type="Label" parent="Stats/Time"]
-margin_left = 48.0
-margin_right = 93.0
+margin_left = 35.0
+margin_right = 80.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 45, 0 )
-text = "/ 4 AP"
+text = "/3 AP"
 
 [node name="Actions" type="VBoxContainer" parent="."]
-visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -124.0
@@ -168,7 +169,7 @@ margin_left = 24.0
 margin_right = 124.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 100, 20 )
-text = "Play (-1 AP)"
+text = "Play (-2 AP)"
 
 [node name="Work" type="HBoxContainer" parent="Actions"]
 margin_top = 72.0
@@ -187,7 +188,7 @@ margin_left = 24.0
 margin_right = 124.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 100, 20 )
-text = "Work -2 AP)"
+text = "Work (-2 AP)"
 
 [node name="Save" type="HBoxContainer" parent="Actions"]
 margin_top = 96.0
@@ -209,6 +210,7 @@ rect_min_size = Vector2( 100, 20 )
 text = "Advent"
 
 [node name="MarketActions" type="VBoxContainer" parent="."]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -124.0

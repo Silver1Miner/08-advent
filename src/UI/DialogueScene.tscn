@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
 [ext_resource path="res://src/UI/DialogueScene.gd" type="Script" id=2]
 [ext_resource path="res://src/UI/UIComponents/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/UI/UIComponents/Textbox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UI/UIComponents/TransitionScene.tscn" type="PackedScene" id=5]
 
 [node name="DialogueScene" type="Control"]
 anchor_right = 1.0
@@ -24,3 +25,5 @@ __meta__ = {
 [node name="Textbox" parent="." instance=ExtResource( 4 )]
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="TransitionScene" parent="." instance=ExtResource( 5 )]

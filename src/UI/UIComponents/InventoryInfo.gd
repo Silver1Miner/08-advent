@@ -2,7 +2,7 @@ extends HBoxContainer
 
 signal item_selected(item)
 
-var item_data = preload("res://data/item_data.tres") 
+var item_data: Resource = preload("res://data/item_data.tres") 
 onready var itemlist = $ItemList
 onready var pricetag = $Info/Price/BasePrice
 onready var description = $Info/Description
@@ -10,7 +10,6 @@ var items = []
 
 func _ready() -> void:
 	load_items(PlayerData.inventory)
-	pass
 
 func load_items(inventory) -> void:
 	items.clear()
