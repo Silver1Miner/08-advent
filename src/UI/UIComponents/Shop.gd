@@ -3,7 +3,7 @@ enum shop_mode {BUY, SELL}
 var current_mode = shop_mode.BUY
 var current_item = ""
 
-signal haggle_item(item)
+signal haggle_item(item, current_mode)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if $Display/InventoryInfo.connect("item_selected", self, "_on_item_selected") != OK:
@@ -29,7 +29,7 @@ func _on_item_selected(item: String) -> void:
 
 func _on_Accept_pressed() -> void:
 	print("try to buy/sell ", current_item)
-	emit_signal("haggle_item", current_item)
+	emit_signal("haggle_item", current_item, current_mode)
 
 func _on_Cancel_pressed() -> void:
 	current_item = ""

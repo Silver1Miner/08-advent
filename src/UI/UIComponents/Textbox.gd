@@ -22,6 +22,8 @@ func _ready() -> void:
 
 func play_dialogue(text_data) -> void:
 	visible = true
+	$Panels/Right/TextOptions.visible = true
+	$Panels/Center.color = Color(0,0,0,75.0/255)
 	$Timer.start()
 	dialogue = text_data
 	page = "0"
@@ -46,14 +48,16 @@ func _on_next() -> void:
 			text.set_visible_characters(text.get_total_character_count())
 
 func _unhandled_input(event) -> void:
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_accept") or event.is_action_pressed("left_click"):
 		_on_next()
-	elif event.is_action_pressed("ui_cancel"):
+	elif event.is_action_pressed("ui_cancel") or event.is_action_pressed("right_click"):
 		end_text()
 
 func end_text() -> void:
 	nametag.text = ""
 	text.clear()
+	$Panels/Center.color = Color(0,0,0,0)
+	$Panels/Right/TextOptions.visible = false
 	emit_signal("text_finished")
 
 func _on_timer_timeout() -> void:

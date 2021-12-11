@@ -3,6 +3,7 @@ extends Control
 onready var date_label = $Stats/Date/DateLabel
 onready var money_label = $Stats/Money/MoneyLabel
 onready var ap_label = $Stats/Time/APLabel
+onready var mp_label = $Stats/Market/MPLabel
 
 signal to_market()
 signal to_dialogue()
@@ -17,6 +18,7 @@ func update_stat_display() -> void:
 	date_label.text = str(PlayerData.day)
 	money_label.text = str(PlayerData.cash)
 	ap_label.text = str(PlayerData.ap)
+	mp_label.text = str(PlayerData.mp)
 	$InventoryInfo.load_items(PlayerData.inventory)
 
 func update_action_availability() -> void:

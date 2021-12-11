@@ -5,6 +5,9 @@ signal offer_made(value)
 var current_value = 0
 var base_value = 1000
 var percent = 0
+enum haggle_mode {BUY, SELL}
+var current_mode = haggle_mode.BUY
+var item_data: Resource = preload("res://data/item_data.tres")
 
 onready var hundredthousand = $Display/Dial/HundredThousand
 onready var tenthousand = $Display/Dial/TenThousand
@@ -19,8 +22,17 @@ func _ready() -> void:
 			push_error("dial connect fail")
 	set_dial_value(base_value)
 
+func set_mode(mode) -> void:
+	current_mode = mode
+	match current_mode:
+		haggle_mode.BUY:
+			$Display/Label.text = "Trying to buy from the market:"
+		haggle_mode.SELL:
+			$Display/Label.text = "Trying to sell to the buyer:"
+
 func set_target_item(item_name: String) -> void:
 	$Display/ItemName.set_text(item_name)
+	$Display/Preview/PreviewImage.texture = load(item_data.get_item_icon(item_name))
 
 func _on_value_changed(_value) -> void:
 	calculate_dial_value()

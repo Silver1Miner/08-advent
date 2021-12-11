@@ -105,17 +105,46 @@ margin_bottom = 19.0
 rect_min_size = Vector2( 45, 0 )
 text = "/3 AP"
 
+[node name="Market" type="HBoxContainer" parent="Stats"]
+margin_top = 72.0
+margin_right = 80.0
+margin_bottom = 92.0
+custom_constants/separation = 0
+
+[node name="TimeIcon" type="TextureRect" parent="Stats/Market"]
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="MPLabel" type="Label" parent="Stats/Market"]
+margin_left = 20.0
+margin_right = 35.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 15, 20 )
+text = "3"
+align = 2
+valign = 1
+
+[node name="Max" type="Label" parent="Stats/Market"]
+margin_left = 35.0
+margin_right = 80.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 45, 0 )
+text = "/3 MP"
+
 [node name="Actions" type="VBoxContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -124.0
-margin_bottom = 92.0
+margin_left = -134.0
+margin_bottom = 116.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Inventory" type="HBoxContainer" parent="Actions"]
-margin_right = 126.0
+margin_right = 134.0
 margin_bottom = 20.0
 
 [node name="InventoryIcon" type="TextureRect" parent="Actions/Inventory"]
@@ -127,15 +156,15 @@ expand = true
 
 [node name="OpenInventory" type="Button" parent="Actions/Inventory"]
 margin_left = 24.0
-margin_right = 124.0
+margin_right = 134.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 100, 20 )
+rect_min_size = Vector2( 110, 20 )
 toggle_mode = true
 text = "Inventory"
 
 [node name="Market" type="HBoxContainer" parent="Actions"]
 margin_top = 24.0
-margin_right = 126.0
+margin_right = 134.0
 margin_bottom = 44.0
 
 [node name="MarketIcon" type="TextureRect" parent="Actions/Market"]
@@ -147,14 +176,14 @@ expand = true
 
 [node name="ToMarket" type="Button" parent="Actions/Market"]
 margin_left = 24.0
-margin_right = 126.0
+margin_right = 134.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 100, 20 )
+rect_min_size = Vector2( 110, 20 )
 text = "Market (-1 AP)"
 
 [node name="Play" type="HBoxContainer" parent="Actions"]
 margin_top = 48.0
-margin_right = 126.0
+margin_right = 134.0
 margin_bottom = 68.0
 
 [node name="PlayIcon" type="TextureRect" parent="Actions/Play"]
@@ -166,14 +195,14 @@ expand = true
 
 [node name="ToDialogue" type="Button" parent="Actions/Play"]
 margin_left = 24.0
-margin_right = 124.0
+margin_right = 134.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 100, 20 )
+rect_min_size = Vector2( 110, 20 )
 text = "Play (-2 AP)"
 
 [node name="Work" type="HBoxContainer" parent="Actions"]
 margin_top = 72.0
-margin_right = 126.0
+margin_right = 134.0
 margin_bottom = 92.0
 
 [node name="WorkIcon" type="TextureRect" parent="Actions/Work"]
@@ -185,14 +214,14 @@ expand = true
 
 [node name="ToWork" type="Button" parent="Actions/Work"]
 margin_left = 24.0
-margin_right = 124.0
+margin_right = 134.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 100, 20 )
+rect_min_size = Vector2( 110, 20 )
 text = "Work (-2 AP)"
 
 [node name="Save" type="HBoxContainer" parent="Actions"]
 margin_top = 96.0
-margin_right = 126.0
+margin_right = 134.0
 margin_bottom = 116.0
 
 [node name="SaveIcon" type="TextureRect" parent="Actions/Save"]
@@ -204,10 +233,10 @@ expand = true
 
 [node name="OpenSave" type="Button" parent="Actions/Save"]
 margin_left = 24.0
-margin_right = 124.0
+margin_right = 134.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 100, 20 )
-text = "Advent"
+rect_min_size = Vector2( 110, 20 )
+text = "Advent Journal"
 
 [node name="MarketActions" type="VBoxContainer" parent="."]
 visible = false

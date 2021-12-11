@@ -3,6 +3,7 @@ extends Control
 func _ready() -> void:
 	if PlayerData.ap <= 0:
 		end_day()
+	$HUD/Stats/Market.visible = false
 	$HUD/Actions.visible = true
 	$HUD/MarketActions.visible = false
 	$HUD/Actions/Play/ToDialogue.disabled = (PlayerData.ap < 2)

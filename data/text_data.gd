@@ -5,6 +5,11 @@ func get_scene(id) -> Dictionary:
 		return scenes[id]
 	return scenes[0]
 
+func get_texture(id) -> String:
+	if id in backgrounds:
+		return backgrounds[id]
+	return backgrounds[0]
+
 func get_haggle(id) -> Dictionary:
 	return haggle[id]
 
@@ -13,6 +18,10 @@ var haggle := {
 "0": {"name": "Test", "profile": "test",
 "text": "Could you make it a little cheaper?"},
 	},
+}
+
+var backgrounds := {
+	0: "res://assets/Backgrounds/title.jpg" # error placeholder
 }
 
 var scenes := {

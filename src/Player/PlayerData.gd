@@ -5,6 +5,7 @@ var end_game = false
 var day := 1
 var cash := 4000
 var ap := 3
+var mp := 3
 var next_scene := 0
 var stats := {
 	"hp": 100,
