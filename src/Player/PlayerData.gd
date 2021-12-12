@@ -1,19 +1,20 @@
 extends Node
 
 var new_game = false
-var end_game = false
+var ending := 0 # 1 bad, # 2 true
+var has_worked = false
 var day := 1
 var cash := 4000
+var max_cash := 999999
 var ap := 3
 var mp := 3
 var next_scene := 0
 var stats := {
-	"hp": 100,
 	"miss_streak": 0,
 	"misses": 0,
 }
 var inventory := {
-	"Medicine": 3,
+	"Medicine": 1,
 	"Advent": 1,
 }
 var collected := {
@@ -25,7 +26,7 @@ var dialogue_scene: PackedScene = preload("res://src/UI/DialogueScene.tscn")
 var hub_scene: PackedScene = preload("res://src/UI/Hub.tscn")
 var main_menu: PackedScene = preload("res://src/Menu/MainMenu.tscn")
 var credits: PackedScene = preload("res://src/UI/TextScroll.tscn")
-var max_days := 5
+var max_days := 9
 
 func _ready() -> void:
 	pass

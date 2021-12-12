@@ -9,7 +9,10 @@ var shop_inventory = {
 signal haggle_item(item, current_mode)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	shop_inventory = inventory_schedule[PlayerData.day]
+	if PlayerData.day in inventory_schedule:
+		shop_inventory = inventory_schedule[PlayerData.day]
+	else:
+		shop_inventory = inventory_schedule[1]
 	if $Display/InventoryInfo.connect("item_selected", self, "_on_item_selected") != OK:
 		push_error("signal connect fail")
 

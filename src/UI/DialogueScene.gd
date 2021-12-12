@@ -15,11 +15,17 @@ func _ready() -> void:
 func go_to_hub() -> void:
 	if PlayerData.ap <= 0:
 		PlayerData.day = int(clamp(PlayerData.day + 1, 0, PlayerData.max_days))
-		PlayerData.ap = 3
+		PlayerData.ap = 4
 	$TransitionScene.transition_to(PlayerData.hub_scene)
 
 func go_to_market() -> void:
 	$TransitionScene.transition_to(PlayerData.market_scene)
 
 func _on_text_finished() -> void:
-	go_to_hub()
+	if PlayerData.ending == 0:
+		go_to_hub()
+		PlayerData.ap -= 1
+		if PlayerData.next_scene == 10:
+			PlayerData.cash = int(clamp(PlayerData.cash+1000,0,PlayerData.max_cash))
+	else:
+		$TransitionScene.transition_to(PlayerData.credits)

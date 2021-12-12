@@ -8,6 +8,7 @@ onready var mp_label = $Stats/Market/MPLabel
 signal to_market()
 signal to_dialogue()
 signal to_hub()
+signal to_work()
 signal buy_mode()
 signal sell_mode()
 
@@ -47,3 +48,6 @@ func _on_BuyMode_pressed() -> void:
 
 func _on_SellMode_pressed() -> void:
 	emit_signal("sell_mode")
+
+func _on_ToWork_pressed() -> void:
+	emit_signal("to_work")

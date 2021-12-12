@@ -78,12 +78,12 @@ func customer_decision(percent_value) -> void:
 	randomize()
 	match current_mode:
 		haggle_mode.BUY:
-			if percent_value >= rand_range(105,120):
+			if percent_value >= rand_range(90,120):
 				emit_signal("offer_accepted", current_value)
 			else:
 				emit_signal("offer_countered", current_value)
 		haggle_mode.SELL:
-			if percent_value >= rand_range(80,100):
+			if percent_value <= rand_range(80,110):
 				emit_signal("offer_accepted", current_value)
 			else:
 				emit_signal("offer_countered", current_value)

@@ -97,11 +97,11 @@ func _on_offer_accepted(value) -> void:
 	match current_mode:
 		haggle_mode.BUY:
 			PlayerData.inventory[item] = clamp(PlayerData.inventory[item]+1, 0, 99)
-			PlayerData.cash = int(clamp(PlayerData.cash - value, 0, 999999))
+			PlayerData.cash = int(clamp(PlayerData.cash - value, 0, PlayerData.max_cash))
 			shop.remove_inventory(item)
 		haggle_mode.SELL:
 			PlayerData.inventory[item] = clamp(PlayerData.inventory[item]-1, 0, 99)
-			PlayerData.cash = int(clamp(PlayerData.cash + value, 0, 999999))
+			PlayerData.cash = int(clamp(PlayerData.cash + value, 0, PlayerData.max_cash))
 	haggle.visible = false
 	$HUD.update_stat_display()
 

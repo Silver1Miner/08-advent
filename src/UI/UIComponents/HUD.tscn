@@ -26,6 +26,25 @@ __meta__ = {
 [node name="InventoryInfo" parent="." instance=ExtResource( 2 )]
 visible = false
 
+[node name="BackLeft" type="ColorRect" parent="."]
+margin_right = 100.0
+margin_bottom = 100.0
+color = Color( 0, 0, 0, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackRight" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -142.0
+margin_right = -2.0
+margin_bottom = 120.0
+color = Color( 0, 0, 0, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Stats" type="VBoxContainer" parent="."]
 margin_left = 10.0
 margin_right = 90.0
@@ -137,7 +156,8 @@ text = "/3 MP"
 [node name="Actions" type="VBoxContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -134.0
+margin_left = -140.0
+margin_right = -6.0
 margin_bottom = 116.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -316,6 +336,7 @@ visible = false
 [connection signal="toggled" from="Actions/Inventory/OpenInventory" to="." method="_on_OpenInventory_toggled"]
 [connection signal="pressed" from="Actions/Market/ToMarket" to="." method="_on_ToMarket_pressed"]
 [connection signal="pressed" from="Actions/Play/ToDialogue" to="." method="_on_ToDialogue_pressed"]
+[connection signal="pressed" from="Actions/Work/ToWork" to="." method="_on_ToWork_pressed"]
 [connection signal="pressed" from="Actions/Save/OpenSave" to="." method="_on_OpenSave_pressed"]
 [connection signal="pressed" from="MarketActions/Buy/BuyMode" to="." method="_on_BuyMode_pressed"]
 [connection signal="pressed" from="MarketActions/Sell/SellMode" to="." method="_on_SellMode_pressed"]

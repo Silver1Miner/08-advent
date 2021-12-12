@@ -1,6 +1,7 @@
 extends Control
 
 var next_level = PlayerData.hub_scene
+var text_data: Resource = preload("res://data/text_data.tres")
 const section_time := 2.0
 const line_time := 0.8
 const speed_up_multiplier := 10.0
@@ -25,12 +26,12 @@ var text := []
 func _ready() -> void:
 	if PlayerData.new_game:
 		base_speed = 30
-		text = intro_text
+		text = text_data.intro_text
 		next_level = PlayerData.hub_scene
 		PlayerData.new_game = false
 	else:
 		base_speed = 30
-		text = credits
+		text = text_data.credits
 		next_level = PlayerData.main_menu
 
 func _process(delta: float) -> void:
@@ -87,46 +88,3 @@ func _unhandled_input(event) -> void:
 
 func _on_Skip_pressed() -> void:
 	finish()
-
-var intro_text = [
-	[
-		"My sister loves Christmas.",
-	],[
-		"This year, she's been very sick.",
-		"",
-		"",
-	],[
-		",",
-		"I want to give her the best Christmas ever."
-	]
-]
-
-var credits = [
-	[
-		"Advent",
-		"by Jack Anderson"
-	],[
-		"SOUNDTRACK",
-		"'Advent' by Jack",
-		"'In the Bleak Midwinter' by Gustav Holst",
-		"'O Holy Night' by Adolphe Adam",
-		"'Aud Lang Syne'",
-	],[
-		"Additional CC0 Assets from",
-		"opengameart.org",
-		"freesound.org",
-		"kenney.nl",
-		"unsplash.com",
-		"fonts.google.com"
-	],[
-		"TOOLS",
-		"Godot",
-		"Krita",
-	],[
-		"Special Thanks",
-		"You, for playing"
-	]
-]
-
-
-
