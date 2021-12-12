@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func go_to_hub() -> void:
 	if PlayerData.ap <= 0:
-		PlayerData.day += 1
+		PlayerData.day = int(clamp(PlayerData.day + 1, 0, PlayerData.max_days))
 		PlayerData.ap = 3
 	$TransitionScene.transition_to(PlayerData.hub_scene)
 

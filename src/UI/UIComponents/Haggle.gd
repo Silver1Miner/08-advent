@@ -1,7 +1,9 @@
 extends NinePatchRect
 
-signal offer_refused()
-signal offer_made(value)
+signal transaction_cancelled()
+signal offer_countered(value)
+signal offer_accepted(value)
+signal not_enough_cash()
 var current_value = 0
 var base_value = 1000
 var percent = 0
@@ -33,6 +35,9 @@ func set_mode(mode) -> void:
 func set_target_item(item_name: String) -> void:
 	$Display/ItemName.set_text(item_name)
 	$Display/Preview/PreviewImage.texture = load(item_data.get_item_icon(item_name))
+	base_value = item_data.get_item_base_price(item_name)
+	current_value = base_value
+	percent = current_value / base_value * 100
 
 func _on_value_changed(_value) -> void:
 	calculate_dial_value()
@@ -56,10 +61,29 @@ func calculate_dial_value() -> void:
 	current_value += float(thousand.value) * 1000
 	current_value += float(tenthousand.value) * 10000
 	current_value += float(hundredthousand.value) * 100000
+	percent = current_value/base_value * 100
 
 func _on_Decline_pressed() -> void:
-	emit_signal("offer_refused")
+	emit_signal("transaction_cancelled")
 
 func _on_Offer_pressed() -> void:
+	if current_mode == haggle_mode.BUY and current_value > PlayerData.cash:
+		emit_signal("not_enough_cash")
+		return
 	calculate_dial_value()
-	emit_signal("offer_made", current_value)
+	customer_decision(percent)
+
+func customer_decision(percent_value) -> void:
+	print("percent base: ", str(percent_value))
+	randomize()
+	match current_mode:
+		haggle_mode.BUY:
+			if percent_value >= rand_range(105,120):
+				emit_signal("offer_accepted", current_value)
+			else:
+				emit_signal("offer_countered", current_value)
+		haggle_mode.SELL:
+			if percent_value >= rand_range(80,100):
+				emit_signal("offer_accepted", current_value)
+			else:
+				emit_signal("offer_countered", current_value)

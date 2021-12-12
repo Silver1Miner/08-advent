@@ -45,26 +45,23 @@ text = "Try to Sell"
 align = 1
 
 [node name="InventoryInfo" parent="Display" instance=ExtResource( 1 )]
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 0.0
 margin_top = 31.0
 margin_right = 404.0
-margin_bottom = 231.0
+margin_bottom = 31.0
 
 [node name="Accept" type="Button" parent="Display"]
-margin_top = 243.0
+margin_top = 43.0
 margin_right = 404.0
-margin_bottom = 263.0
+margin_bottom = 63.0
 rect_min_size = Vector2( 200, 0 )
 text = "Haggle (-1 Market action Point)"
 
 [node name="Cancel" type="Button" parent="Display"]
-margin_top = 275.0
+margin_top = 75.0
 margin_right = 404.0
-margin_bottom = 295.0
+margin_bottom = 95.0
 text = "Cancel"
 
 [connection signal="pressed" from="Display/Accept" to="." method="_on_Accept_pressed"]

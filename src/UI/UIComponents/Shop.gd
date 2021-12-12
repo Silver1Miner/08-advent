@@ -2,10 +2,14 @@ extends NinePatchRect
 enum shop_mode {BUY, SELL}
 var current_mode = shop_mode.BUY
 var current_item = ""
+var shop_inventory = {
+	"Medicine": 1,
+}
 
 signal haggle_item(item, current_mode)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	shop_inventory = inventory_schedule[PlayerData.day]
 	if $Display/InventoryInfo.connect("item_selected", self, "_on_item_selected") != OK:
 		push_error("signal connect fail")
 
@@ -19,9 +23,18 @@ func set_mode(mode) -> void:
 			$Display/Label.text = "Try to Sell:"
 			$Display/InventoryInfo.load_items(PlayerData.inventory)
 
-var shop_inventory = {
+var inventory_schedule = {
+	1: { # day
+		"Medicine": 1,
+	},
+	2: {
 	"Medicine": 1,
+	},
 }
+
+func remove_inventory(item: String) -> void:
+	if item in shop_inventory:
+		shop_inventory[item] -= 1
 
 func _on_item_selected(item: String) -> void:
 	current_item = item
