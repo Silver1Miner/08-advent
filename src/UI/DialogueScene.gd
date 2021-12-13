@@ -24,8 +24,9 @@ func go_to_market() -> void:
 func _on_text_finished() -> void:
 	if PlayerData.ending == 0:
 		go_to_hub()
-		PlayerData.ap -= 1
-		if PlayerData.next_scene == 10:
+		if PlayerData.next_scene <= 11:
+			PlayerData.ap -= 1
+		if PlayerData.next_scene == 10 or PlayerData.next_scene == 11:
 			PlayerData.cash = int(clamp(PlayerData.cash+1000,0,PlayerData.max_cash))
 	else:
 		$TransitionScene.transition_to(PlayerData.credits)

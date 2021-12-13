@@ -1,6 +1,18 @@
 extends Control
 
 func _ready() -> void:
+	if PlayerData.day == PlayerData.max_days:
+		if PlayerData.stats["misses"] == 0:
+			PlayerData.ending = 2
+			PlayerData.next_scene = 20
+		else:
+			PlayerData.ending = 1
+			PlayerData.next_scene = 21
+		$TransitionScene.transition_to(PlayerData.dialogue_scene)
+	elif PlayerData.stats["misses"] >= 3:
+		PlayerData.ending = 1
+		PlayerData.next_scene = 22
+		$TransitionScene.transition_to(PlayerData.dialogue_scene)
 	if PlayerData.ap <= 0:
 		end_day()
 	$HUD/Stats/Market.visible = false
@@ -41,10 +53,7 @@ func go_to_market() -> void:
 		$TransitionScene.transition_to(PlayerData.market_scene)
 
 func end_day() -> void:
-	if PlayerData.day == PlayerData.max_days:
-		PlayerData.ending = 2
-		PlayerData.next_scene = 20
-	elif PlayerData.inventory["Medicine"] > 0:
+	if PlayerData.inventory["Medicine"] > 0:
 		PlayerData.next_scene = -1
 		PlayerData.inventory["Medicine"] -= 1
 	elif PlayerData.stats["misses"] < 2:

@@ -17,26 +17,28 @@ var backgrounds := {
 var scenes := {
 	# End of Day Scenes
 	-1:{
-		"0": {"name": "Test", "profile": "test",
-		"text": "It's gotten late. Time for bed, right? Yes, I made sure to take my medicine."},
-		"1": {"name": "Test", "profile": "test",
-		"text": "Good night."},
+"0": {"name": "", "profile": "test",
+"text": "It's gotten late. Time for bed. Did you take your medicine?"},
+"1": {"name": "Natalie", "profile": "test",
+"text": "Yes, I made sure to take my medicine."},
+"2": {"name": "Natalie", "profile": "test",
+"text": "Good night."},
 	},
 	-2:{
-		"0": {"name": "Test", "profile": "test",
-		"text": "Time for bed, right?"},
-		"1": {"name": "Test", "profile": "test",
-		"text": "Oh, we're out of medicine?"},
-		"2": {"name": "Test", "profile": "test",
-		"text": "Well, I'm sure I can get by without it. Good night."},
+"0": {"name": "Test", "profile": "test",
+"text": "Time for bed, right?"},
+"1": {"name": "Test", "profile": "test",
+"text": "Oh, we're out of medicine?"},
+"2": {"name": "Test", "profile": "test",
+"text": "Well, I'm sure I can get by without it for today. Good night."},
 	},
 	-3:{
-		"0": {"name": "Test", "profile": "test",
-		"text": "Oh, we're out of medicine again?"},
-		"1": {"name": "Test", "profile": "test",
-		"text": "I was hoping... since I've been feeling a bit..."},
-		"2": {"name": "Test", "profile": "test",
-		"text": "Ah... it's nothing. Good night."},
+"0": {"name": "Test", "profile": "test",
+"text": "Oh, we're out of medicine again?"},
+"1": {"name": "Test", "profile": "test",
+"text": "I was hoping... since I've been feeling a bit..."},
+"2": {"name": "Test", "profile": "test",
+"text": "Ah... it's nothing. Good night."},
 	},
 # Error result
 	0: {
@@ -105,20 +107,12 @@ var scenes := {
 "text": "Bye bye."},
 	},
 	8: {
-"0": {"name": "Test", "profile": "test",
-"text": "This is the play scene for day 8"},
+"0": {"name": "", "profile": "test",
+"text": "Happy Christmas Eve."},
 "1": {"name": "Test", "profile": "test",
-"text": "The quick brown fox jumps over the lazy dog."},
+"text": "Did you get me a good present?"},
 "2": {"name": "Test", "profile": "test",
-"text": "Bye bye."},
-	},
-	9: {
-"0": {"name": "Test", "profile": "test",
-"text": "This is the play scene for day 9"},
-"1": {"name": "Test", "profile": "test",
-"text": "The quick brown fox jumps over the lazy dog."},
-"2": {"name": "Test", "profile": "test",
-"text": "Bye bye."},
+"text": ""},
 	},
 # Work Scene
 	10: {
@@ -138,24 +132,90 @@ var scenes := {
 "text": "But for her, it's worth it"},
 	},
 # Ending Scenes
-	20: {
-"0": {"name": "Test", "profile": "test",
-"text": "This is ending 2"},
-"1": {"name": "Test", "profile": "test",
-"text": "The quick brown fox jumps over the lazy dog."},
+	20: { # True Ending
+"0": {"name": "", "profile": "test",
+"text": "Hey, are you sleeping in? It's Christmas! Time to..."},
+"1": {"name": "", "profile": "test",
+"text": "..."},
+"2": {"name": "", "profile": "test",
+"text": "..."},
+"3": {"name": "", "profile": "test",
+"text": "I see."},
+"4": {"name": "", "profile": "test",
+"text": "It's okay. You go ahead and sleep."},
+"5": {"name": "", "profile": "test",
+"text": "Merry Christmas."},
+"6": {"name": "", "profile": "test",
+"text": "I love you."},
+"7": {"name": "", "profile": "test",
+"text": "I'll love you forever."},
+	},
+	21: { # Neutral Ending
+"0": {"name": "", "profile": "test",
+"text": "I know something's wrong as soon as I awake."},
+"1": {"name": "", "profile": "test",
+"text": "It's far too late, of course."},
+"2": {"name": "", "profile": "test",
+"text": "Her body is already cold. The cold seems to flow into me as I hug her."},
+"3": {"name": "", "profile": "test",
+"text": "What could I have done differently?"},
+"4": {"name": "", "profile": "test",
+"text": "What could I have done to save her?"},
+	},
+	22: { # Bad Ending
+"0": {"name": "", "profile": "test",
+"text": "I know something's wrong as soon as I awake."},
+"1": {"name": "", "profile": "test",
+"text": "It's far too late, of course."},
+"2": {"name": "", "profile": "test",
+"text": "Her body is already cold. The cold seems to pierce my heart as I hug her."},
+"3": {"name": "", "profile": "test",
+"text": "This is my fault. I did this."},
+"4": {"name": "", "profile": "test",
+"text": "What could I have done differently?"},
+"5": {"name": "", "profile": "test",
+"text": "What could I have done to save her?"},
+	},
+# Story Scnees
+	30: {
+"0": {"name": "", "profile": "test",
+"text": "A dream?"},
+"1": {"name": "Old Man", "profile": "test",
+"text": "Yeah, think of this as a dream. Here, take this."},
+"2": {"name": "", "profile": "test",
+"text": "An advent calendar?"},
+"3": {"name": "Old Man", "profile": "test",
+"text": "Something like a cross between a calendar and a journal."},
+"4": {"name": "Old Man", "profile": "test",
+"text": "You'll need it for what you want to do, even though it's impossible."},
+"5": {"name": "Old Man", "profile": "test",
+"text": "You can't save her. But you'll try anyways."},
+"6": {"name": "", "profile": "test",
+"text": "When I awake, I'm clutching the advent calendar journal in my hand."},
+"7": {"name": "", "profile": "test",
+"text": "It's a beaten up little journal. The pages are mostly blank, except for the headers."},
+"8": {"name": "", "profile": "test",
+"text": "The headers count off the days of advent, the days until Christmas."},
+"9": {"name": "", "profile": "test",
+"text": "I think I picked it up off the ground yesterday, but in my early morning daze, I'm not so sure anymore."},
 	},
 }
 
 var intro_text = [
 	[
-		"My sister loves Christmas.",
+		"My little sister Natalie loves Christmas.",
 	],[
 		"This year, she's been very sick.",
-		"",
-		"",
+		"She needs to take medicine every day.",
 	],[
-		",",
-		"I want to give her the best Christmas ever."
+		"The doctor is pessimistic, but I won't give up hope.",
+		"Even the doctor admitted that her health depends a lot on her mood.",
+		"So long as I take good care of her, she'll be fine.",
+	],[
+		"Whenever I bring up Christmas, her eyes light up like stars.",
+		"As long as I keep her happy, I know she'll get better.",
+	],[
+		"I'll make this Christmas the best Christmas ever.",
 	]
 ]
 
@@ -181,7 +241,7 @@ var credits = [
 		"Godot",
 		"Krita",
 	],[
-		"Special Thanks",
-		"You, for playing"
+		"Dedicated to",
+		"Natalie"
 	]
 ]

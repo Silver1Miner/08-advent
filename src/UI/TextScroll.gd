@@ -27,7 +27,8 @@ func _ready() -> void:
 	if PlayerData.new_game:
 		base_speed = 30
 		text = text_data.intro_text
-		next_level = PlayerData.hub_scene
+		PlayerData.next_scene = 30
+		next_level = PlayerData.dialogue_scene
 		PlayerData.new_game = false
 	else:
 		base_speed = 30
