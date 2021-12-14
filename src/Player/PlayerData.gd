@@ -26,7 +26,7 @@ var dialogue_scene: PackedScene = preload("res://src/UI/DialogueScene.tscn")
 var hub_scene: PackedScene = preload("res://src/UI/Hub.tscn")
 var main_menu: PackedScene = preload("res://src/Menu/MainMenu.tscn")
 var credits: PackedScene = preload("res://src/UI/TextScroll.tscn")
-var max_days := 9
+var max_days := 8
 
 func _ready() -> void:
 	pass

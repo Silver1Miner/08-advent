@@ -19,5 +19,5 @@ var items = {
 		"base_price": 4000,
 		"description": "A mysterious combination journal-advent calendar.",
 		"icon": "res://assets/Icons/book_open.png"
-	}
+	},
 }
