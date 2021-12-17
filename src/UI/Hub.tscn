@@ -30,4 +30,3 @@ __meta__ = {
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 
 [node name="TransitionScene" parent="." instance=ExtResource( 5 )]
-color = Color( 0, 0, 0, 0 )

@@ -1,6 +1,8 @@
 extends Control
 
 func _ready() -> void:
+	if AudioManager.stream != preload("res://assets/Audio/In_the_Bleak_Midwinter.ogg"):
+		AudioManager.play_music("res://assets/Audio/In_the_Bleak_Midwinter.ogg")
 	if PlayerData.day == PlayerData.max_days:
 		if PlayerData.stats["misses"] == 0:
 			PlayerData.ending = 2

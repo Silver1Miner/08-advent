@@ -9,6 +9,7 @@ enum haggle_mode {BUY, SELL}
 var current_mode = haggle_mode.BUY
 
 func _ready() -> void:
+	AudioManager.play_music("res://assets/Audio/The_First_Noel.ogg")
 	PlayerData.mp = 3
 	$HUD.update_stat_display()
 	$HUD/Actions.visible = false
@@ -66,6 +67,7 @@ func _on_sell_mode() -> void:
 		)
 
 func _on_haggle(item_name, mode) -> void:
+	AudioManager.play_music("res://assets/Audio/Carol_of_the_Bells.ogg")
 	if PlayerData.mp > 0:
 		PlayerData.mp -= 1
 		$HUD.update_stat_display()
@@ -82,6 +84,7 @@ func _on_haggle(item_name, mode) -> void:
 		)
 
 func _on_transaction_cancelled() -> void:
+	AudioManager.play_music("res://assets/Audio/The_First_Noel.ogg")
 	$Textbox.play_dialogue(
 		{"0": {"name": "Trader", "profile": "test",
 		"text": "Disappointing that we couldn't make a deal this time. Ah, but there's always next time."},}
@@ -89,6 +92,7 @@ func _on_transaction_cancelled() -> void:
 	haggle.visible = false
 
 func _on_offer_accepted(value) -> void:
+	AudioManager.play_music("res://assets/Audio/The_First_Noel.ogg")
 	print("offer accepted at for ", item, "at: ", value)
 	$Textbox.play_dialogue(
 		{"0": {"name": "Trader", "profile": "test",

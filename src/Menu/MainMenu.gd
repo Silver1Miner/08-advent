@@ -1,6 +1,7 @@
 extends Control
 
 func _ready() -> void:
+	AudioManager.volume_db = linear2db(0)
 	AudioManager.play_music("res://assets/Audio/In_the_Bleak_Midwinter.ogg", 0)
 	if OS.get_name() == "HTML5":
 		$Options/Quit.visible = false

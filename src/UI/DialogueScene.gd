@@ -11,6 +11,8 @@ func _ready() -> void:
 		push_error("UI signal connect fail")
 	$Background.set_texture(load(text_data.get_texture(PlayerData.next_scene)))
 	$Textbox.play_dialogue(text_data.get_scene(PlayerData.next_scene))
+	if text_data.get_music(PlayerData.next_scene) != "res://assets/Audio/In_the_Bleak_Midwinter.ogg":
+		AudioManager.play_music(text_data.get_music(PlayerData.next_scene))
 
 func go_to_hub() -> void:
 	if PlayerData.ap <= 0:

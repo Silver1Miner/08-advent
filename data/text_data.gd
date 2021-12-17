@@ -10,9 +10,23 @@ func get_texture(id) -> String:
 		return backgrounds[id]
 	return backgrounds[0]
 
+func get_music(id) -> String:
+	if id in music_tracks:
+		return music_tracks[id]
+	return music_tracks[0]
+
 var backgrounds := {
 	0: "res://assets/Backgrounds/street.jpg", # error placeholder
 	7: "res://assets/Backgrounds/market.jpg"
+}
+
+var music_tracks := {
+	0: "res://assets/Audio/In_the_Bleak_Midwinter.ogg",
+	1: "res://assets/Audio/O_Holy_Night.ogg",
+	-2: "res://assets/Audio/Carol_of_the_Bells.ogg",
+	20: "res://assets/Audio/Auld_Lang_Syne.ogg",
+	21: "res://assets/Audio/Advent.ogg",
+	22: "res://assets/Audio/Advent.ogg"
 }
 
 var scenes := {
@@ -332,10 +346,12 @@ var credits = [
 		"by Jack Anderson"
 	],[
 		"SOUNDTRACK",
-		"'Advent' by Jack",
 		"'In the Bleak Midwinter' by Gustav Holst",
 		"'O Holy Night' by Adolphe Adam",
+		"'Carol of the Bells' by Mykola Leontovych",
+		"'The First Noel'",
 		"'Aud Lang Syne'",
+		"'Advent' by Jack",
 	],[
 		"Additional CC0 Assets from",
 		"opengameart.org",
