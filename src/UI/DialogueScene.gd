@@ -5,6 +5,7 @@ onready var textbox = $Textbox
 
 func _ready() -> void:
 	$HUD/Actions.visible = false
+	$HUD/BackRight.visible = false
 	$HUD/MarketActions.visible = false
 	$HUD/Stats/Market.visible = false
 	if textbox.connect("text_finished", self, "_on_text_finished") != OK:

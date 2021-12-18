@@ -23,30 +23,39 @@ margin_right = 200.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 200 )
 
-[node name="Info" type="VBoxContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
 margin_left = 204.0
 margin_right = 404.0
 margin_bottom = 200.0
-custom_constants/separation = 0
+rect_min_size = Vector2( 200, 200 )
 
-[node name="Price" type="HBoxContainer" parent="Info"]
+[node name="Info" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 200, 200 )
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Price" type="HBoxContainer" parent="Panel/Info"]
 margin_right = 200.0
 margin_bottom = 20.0
 
-[node name="Label" type="Label" parent="Info/Price"]
+[node name="Label" type="Label" parent="Panel/Info/Price"]
 visible = false
 margin_right = 100.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 100, 0 )
 text = "Base Price:"
 
-[node name="BasePrice" type="Label" parent="Info/Price"]
+[node name="BasePrice" type="Label" parent="Panel/Info/Price"]
 margin_right = 100.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 100, 20 )
 valign = 1
 
-[node name="Description" type="RichTextLabel" parent="Info"]
+[node name="Description" type="RichTextLabel" parent="Panel/Info"]
 margin_top = 20.0
 margin_right = 200.0
 margin_bottom = 200.0

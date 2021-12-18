@@ -6,12 +6,14 @@ var text_playing = true
 var dialogue = {}
 onready var nametag = $Panels/Center/Name
 onready var text = $Panels/Center/Speech
-onready var avatar = $Panels/Left/Profile
+onready var avatar = $LeftProfile
 var text_dialogue = {
 	"0": {"name": "Test", "profile": "test",
 	"text": "Placeholder"},
 }
-var profiles = {}
+var profiles = {
+	"oldman": preload("res://assets/Profiles/oldman.png")
+}
 
 func _ready() -> void:
 	$Timer.wait_time = 0.02
@@ -24,12 +26,15 @@ func play_dialogue(text_data) -> void:
 	visible = true
 	$Panels/Right/TextOptions.visible = true
 	$Panels/Center.color = Color(0,0,0,75.0/255)
+	$Panels/Left.color = Color(0,0,0,75.0/255)
+	$Panels/Right.color = Color(0,0,0,75.0/255)
 	$Timer.start()
 	dialogue = text_data
 	page = "0"
 	text.set_bbcode(dialogue[page]["text"])
 	nametag.set_text(dialogue[page]["name"])
-	#avatar.set_texture(profiles[dialogue[page]["profile"]])
+	if dialogue[page]["profile"] in profiles:
+		avatar.set_texture(profiles[dialogue[page]["profile"]])
 	text.set_visible_characters(0)
 	set_process_input(true)
 
@@ -57,6 +62,8 @@ func end_text() -> void:
 	nametag.text = ""
 	text.clear()
 	$Panels/Center.color = Color(0,0,0,0)
+	$Panels/Left.color = Color(0,0,0,0)
+	$Panels/Right.color = Color(0,0,0,0)
 	$Panels/Right/TextOptions.visible = false
 	emit_signal("text_finished")
 

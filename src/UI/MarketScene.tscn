@@ -38,3 +38,4 @@ visible = false
 [node name="HUD" parent="." instance=ExtResource( 5 )]
 
 [node name="TransitionScene" parent="." instance=ExtResource( 7 )]
+visible = false
