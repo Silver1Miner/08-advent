@@ -34,7 +34,7 @@ func _ready() -> void:
 	if textbox.connect("text_finished", self, "_on_text_finished") != OK:
 		push_error("UI signal connect fail")
 	$Textbox.play_dialogue(
-		{"0": {"name": "Trader", "profile": "test",
+		{"0": {"name": "Trader", "profile": "oldman",
 		"text": "Welcome to the Open Market. Haggle away."},}
 	)
 
@@ -45,6 +45,7 @@ func go_to_hub() -> void:
 	$TransitionScene.transition_to(PlayerData.hub_scene)
 
 func _on_buy_mode() -> void:
+	$Textbox/LeftProfile.texture = null
 	if PlayerData.mp > 0:
 		haggle.visible = false
 		$Shop.set_mode(0)
@@ -56,6 +57,7 @@ func _on_buy_mode() -> void:
 		)
 
 func _on_sell_mode() -> void:
+	$Textbox/LeftProfile.texture = null
 	if PlayerData.mp > 0:
 		haggle.visible = false
 		$Shop.set_mode(1)
@@ -67,6 +69,7 @@ func _on_sell_mode() -> void:
 		)
 
 func _on_haggle(item_name, mode) -> void:
+	$Textbox/LeftProfile.texture = null
 	if PlayerData.mp > 0:
 		AudioManager.play_music("res://assets/Audio/Carol_of_the_Bells.ogg")
 		PlayerData.mp -= 1
@@ -88,7 +91,7 @@ func _on_transaction_cancelled() -> void:
 	AudioManager.play_music("res://assets/Audio/The_First_Noel.ogg")
 	$Textbox/RightProfile.texture = null
 	$Textbox.play_dialogue(
-		{"0": {"name": "Trader", "profile": "test",
+		{"0": {"name": "Trader", "profile": "oldman",
 		"text": "Disappointing that we couldn't make a deal this time. Ah, but there's always next time."},}
 	)
 	haggle.visible = false
@@ -98,7 +101,7 @@ func _on_offer_accepted(value) -> void:
 	$Textbox/RightProfile.texture = null
 	print("offer accepted at for ", item, "at: ", value)
 	$Textbox.play_dialogue(
-		{"0": {"name": "Trader", "profile": "test",
+		{"0": {"name": "Trader", "profile": "oldman",
 		"text": "Pleasure doing business with you."},}
 	)
 	match current_mode:

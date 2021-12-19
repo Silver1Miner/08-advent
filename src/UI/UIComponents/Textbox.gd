@@ -12,7 +12,8 @@ var text_dialogue = {
 	"text": "Placeholder"},
 }
 var profiles = {
-	"oldman": preload("res://assets/Profiles/oldman.png")
+	"oldman": preload("res://assets/Profiles/oldman.png"),
+	"natalie-base": preload("res://assets/Profiles/natalie-base.png"),
 }
 
 func _ready() -> void:
@@ -35,6 +36,8 @@ func play_dialogue(text_data) -> void:
 	nametag.set_text(dialogue[page]["name"])
 	if dialogue[page]["profile"] in profiles:
 		avatar.set_texture(profiles[dialogue[page]["profile"]])
+	else:
+		avatar.texture = null
 	text.set_visible_characters(0)
 	set_process_input(true)
 
@@ -45,7 +48,10 @@ func _on_next() -> void:
 				page = str(int(page) + 1)
 				text.set_bbcode(dialogue[page]["text"])
 				nametag.set_text(dialogue[page]["name"])
-				#avatar.set_texture(profiles[dialogue[page]["profile"]])
+				if dialogue[page]["profile"] in profiles:
+					avatar.set_texture(profiles[dialogue[page]["profile"]])
+				else:
+					avatar.texture = null
 				text.set_visible_characters(0)
 			elif int(page) >= dialogue.size() - 1:
 				end_text()
@@ -61,9 +67,9 @@ func _unhandled_input(event) -> void:
 func end_text() -> void:
 	nametag.text = ""
 	text.clear()
-	$Panels/Center.color = Color(0,0,0,0)
-	$Panels/Left.color = Color(0,0,0,0)
-	$Panels/Right.color = Color(0,0,0,0)
+	#$Panels/Center.color = Color(0,0,0,0)
+	#$Panels/Left.color = Color(0,0,0,0)
+	#$Panels/Right.color = Color(0,0,0,0)
 	$Panels/Right/TextOptions.visible = false
 	emit_signal("text_finished")
 

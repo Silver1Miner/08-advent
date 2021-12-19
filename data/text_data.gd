@@ -34,11 +34,11 @@ var scenes := {
 	-1:{
 "0": {"name": "", "profile": "test",
 "text": "'It's gotten late. Time for bed. Did you take your medicine?'"},
-"1": {"name": "Natalie", "profile": "test",
+"1": {"name": "Natalie", "profile": "natalie-base",
 "text": "'Yes, I made sure to take my medicine.'"},
-"2": {"name": "", "profile": "test",
+"2": {"name": "", "profile": "natalie-base",
 "text": "'Good night then.'"},
-"3": {"name": "Natalie", "profile": "test",
+"3": {"name": "Natalie", "profile": "natalie-base",
 "text": "'Good night.'"},
 	},
 	-2:{
