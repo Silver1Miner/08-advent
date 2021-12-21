@@ -17,7 +17,10 @@ func get_music(id) -> String:
 
 var backgrounds := {
 	0: "res://assets/Backgrounds/street.jpg", # error placeholder
+	2: "res://assets/CG/window.png",
 	3: "res://assets/CG/chess.png",
+	4: "res://assets/CG/snow.png",
+	5: "res://assets/CG/chocolate.png",
 	7: "res://assets/Backgrounds/market.jpg",
 }
 
