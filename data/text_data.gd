@@ -21,7 +21,10 @@ var backgrounds := {
 	3: "res://assets/CG/chess.png",
 	4: "res://assets/CG/snow.png",
 	5: "res://assets/CG/chocolate.png",
-	7: "res://assets/Backgrounds/market.jpg",
+	7: "res://assets/CG/eve.png",
+	20: "res://assets/CG/end-true.png",
+	21: "res://assets/CG/end.png",
+	22: "res://assets/CG/end.png",
 }
 
 var music_tracks := {
@@ -354,6 +357,9 @@ var credits = [
 		"'The First Noel'",
 		"'Aud Lang Syne'",
 		"'Advent' by Jack",
+	],[
+		"ART",
+		"Yanagi Seigen"
 	],[
 		"Additional CC0 Assets from",
 		"opengameart.org",
