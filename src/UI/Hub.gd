@@ -29,6 +29,11 @@ func _ready() -> void:
 		push_error("fail to connect market signal")
 	if $HUD.connect("to_work", self, "go_to_work") != OK:
 		push_error("fail to connect work signal")
+	if PlayerData.day == 1 and PlayerData.ap == 3:
+		$Textbox.play_dialogue(
+			{"0": {"name": "", "profile": "",
+			"text": "Actions take time, measured in Action Points. The day ends when Action Points are used up."},}
+		)
 
 func go_to_dialogue() -> void:
 	if PlayerData.ap >= 2:

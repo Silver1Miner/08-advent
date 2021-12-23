@@ -10,7 +10,7 @@ var current_mode = haggle_mode.BUY
 
 func _ready() -> void:
 	AudioManager.play_music("res://assets/Audio/The_First_Noel.ogg")
-	PlayerData.mp = 3
+	PlayerData.mp = 5
 	$HUD.update_stat_display()
 	$HUD/Actions.visible = false
 	$HUD/MarketActions.visible = true
@@ -33,10 +33,16 @@ func _ready() -> void:
 		push_error("UI signal connect fail")
 	if textbox.connect("text_finished", self, "_on_text_finished") != OK:
 		push_error("UI signal connect fail")
-	$Textbox.play_dialogue(
-		{"0": {"name": "Trader", "profile": "oldman",
-		"text": "Welcome to the Open Market. Haggle away."},}
-	)
+	if PlayerData.day == 1 and PlayerData.ap >= 2:
+		$Textbox.play_dialogue(
+			{"0": {"name": "Trader", "profile": "oldman",
+			"text": "At each market session you have enough time to make five trades. Use your time wisely."},}
+		)
+	else:
+		$Textbox.play_dialogue(
+			{"0": {"name": "Trader", "profile": "oldman",
+			"text": "Welcome to the Open Market. Haggle away."},}
+		)
 
 func go_to_dialogue() -> void:
 	$TransitionScene.transition_to(PlayerData.dialogue_scene)
@@ -106,7 +112,10 @@ func _on_offer_accepted(value) -> void:
 	)
 	match current_mode:
 		haggle_mode.BUY:
-			PlayerData.inventory[item] = clamp(PlayerData.inventory[item]+1, 0, 99)
+			if item in PlayerData.inventory:
+				PlayerData.inventory[item] = clamp(PlayerData.inventory[item]+1, 0, 99)
+			else:
+				PlayerData.inventory[item] = 1
 			PlayerData.cash = int(clamp(PlayerData.cash - value, 0, PlayerData.max_cash))
 			shop.remove_inventory(item)
 		haggle_mode.SELL:

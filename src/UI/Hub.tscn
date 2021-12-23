@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
 [ext_resource path="res://src/UI/Hub.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/UI/UIComponents/Textbox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UI/UIComponents/TransitionScene.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/Backgrounds/room.jpg" type="Texture" id=6]
+[ext_resource path="res://assets/Profiles/reading.png" type="Texture" id=7]
 
 [node name="Hub" type="Control"]
 anchor_right = 1.0
@@ -28,5 +29,10 @@ __meta__ = {
 [node name="Textbox" parent="." instance=ExtResource( 4 )]
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="Reading" type="Sprite" parent="."]
+position = Vector2( 120, 194 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 7 )
 
 [node name="TransitionScene" parent="." instance=ExtResource( 5 )]

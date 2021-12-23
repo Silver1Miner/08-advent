@@ -17,14 +17,18 @@ func get_music(id) -> String:
 
 var backgrounds := {
 	0: "res://assets/Backgrounds/street.jpg", # error placeholder
-	2: "res://assets/CG/window.png",
-	3: "res://assets/CG/chess.png",
-	4: "res://assets/CG/snow.png",
-	5: "res://assets/CG/chocolate.png",
-	7: "res://assets/CG/eve.png",
+	1: "res://assets/CG/window.png",
+	2: "res://assets/CG/chess.png",
+	3: "res://assets/CG/snow.png",
+	4: "res://assets/CG/chocolate.png",
+	5: "res://assets/CG/eve.png",
 	20: "res://assets/CG/end-true.png",
 	21: "res://assets/CG/end.png",
 	22: "res://assets/CG/end.png",
+	30: "res://assets/Backgrounds/room.jpg",
+	-1: "res://assets/Backgrounds/room.jpg",
+	-2: "res://assets/Backgrounds/room.jpg",
+	-3: "res://assets/Backgrounds/room.jpg"
 }
 
 var music_tracks := {
@@ -72,7 +76,7 @@ var scenes := {
 "text": "It appears when text is missing. Sorry about that."},
 	},
 # Play Scenes
-	1: { #Dec 18
+	9: { #Dec 18 CANCELLED
 "0": {"name": "Natalie", "profile": "test",
 "text": "'Hey, did you remember what today is?'"},
 "1": {"name": "", "profile": "test",
@@ -102,7 +106,7 @@ var scenes := {
 "13": {"name": "", "profile": "test",
 "text": "'Nice try. You'll just have to wait until next week.'"},
 	},
-	2: { #Dec 19
+	1: { #Dec 20
 "0": {"name": "", "profile": "test",
 "text": "That day, I found Natalie staring outside the window, watching the snow."},
 "1": {"name": "", "profile": "test",
@@ -120,7 +124,7 @@ var scenes := {
 "7": {"name": "", "profile": "test",
 "text": "Though she rolled her eyes, she couldn't hide the eagerness in how she snuggled up against my side."},
 	},
-	3: { #Dec 20
+	2: { #Dec 21
 "0": {"name": "", "profile": "test",
 "text": "I spent the day inside playing a board game with Natalie."},
 "1": {"name": "Natalie", "profile": "test",
@@ -144,7 +148,7 @@ var scenes := {
 "10": {"name": "", "profile": "test",
 "text": "Maybe for her next birthday, though."},
 	},
-	4: { #Dec 21
+	3: { #Dec 22
 "0": {"name": "", "profile": "test",
 "text": "I had a little surprise planned for Natalie."},
 "1": {"name": "Natalie", "profile": "test",
@@ -160,7 +164,7 @@ var scenes := {
 "6": {"name": "", "profile": "test",
 "text": "When the snowman was finished, we put it in the freezer for safe keeping."},
 	},
-	5: { #Dec 22
+	4: { #Dec 23
 "0": {"name": "", "profile": "test",
 "text": "It was colder than usual, cold enough that we could feel it even inside."},
 "1": {"name": "", "profile": "test",
@@ -176,7 +180,7 @@ var scenes := {
 "6": {"name": "", "profile": "test",
 "text": "And yet somehow, sitting together with our chocolate, it felt like there was no difference."},
 	},
-	6: { #Dec 23
+	8: { #Dec 23 CANCELLED
 "0": {"name": "", "profile": "test",
 "text": "With Christmas only two days away, it was time to bake some cookies for Santa."},
 "1": {"name": "", "profile": "test",
@@ -196,7 +200,7 @@ var scenes := {
 "8": {"name": "", "profile": "test",
 "text": "It was our little in-joke, one that no one else could really understand."},
 	},
-	7: { #Dec 24
+	5: { #Dec 24
 "0": {"name": "", "profile": "test",
 "text": "For Christmas Eve, I took Natalie around town to see the lights."},
 "1": {"name": "", "profile": "test",
@@ -280,6 +284,24 @@ var scenes := {
 	},
 # Story Scenes
 	30: {
+"0": {"name": "Natalie", "profile": "natalie-base",
+"text": "'I checked the medicine cabinet, and it looks like we only have one dose left?'"},
+"1": {"name": "Matt", "profile": "natalie-base",
+"text": "'No worries. I can always swing by the market to buy more.'"},
+"2": {"name": "Matt", "profile": "",
+"text": "Natalie is smart. She always remembers to take her medicine every evening."},
+"3": {"name": "Matt", "profile": "",
+"text": "It's just on me to make sure to keep the medicine cabinet stocked."},
+"4": {"name": "Matt", "profile": "",
+"text": "My new job doesn't start until after the holidays, but I can make quick cash shoveling snow."},
+"5": {"name": "Matt", "profile": "",
+"text": "Alternatively, I could try my luck and haggling skills flipping commodites at the market."},
+"6": {"name": "Natalie", "profile": "natalie-base",
+"text": "'Is everything alright?'"},
+"7": {"name": "Matt", "profile": "natalie-base",
+"text": "'Everything is fine. Relax and leave everything to me.'"},
+	},
+	39: {
 "0": {"name": "", "profile": "test",
 "text": "A dream?"},
 "1": {"name": "Old Man", "profile": "oldman",

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
 [ext_resource path="res://src/UI/UIComponents/InventoryInfo.tscn" type="PackedScene" id=2]
@@ -9,9 +9,11 @@
 [ext_resource path="res://assets/Icons/pack.png" type="Texture" id=7]
 [ext_resource path="res://assets/Icons/fish_raw.png" type="Texture" id=8]
 [ext_resource path="res://assets/Icons/telescope.png" type="Texture" id=9]
-[ext_resource path="res://assets/Icons/rope.png" type="Texture" id=10]
+[ext_resource path="res://assets/Icons/shovel_01.png" type="Texture" id=10]
 [ext_resource path="res://assets/Icons/book_open.png" type="Texture" id=11]
 [ext_resource path="res://src/Menu/SaveMenu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/Icons/coins_gold.png" type="Texture" id=13]
+[ext_resource path="res://assets/Icons/baseball_mitt.png" type="Texture" id=14]
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
@@ -62,7 +64,7 @@ margin_bottom = 20.0
 margin_right = 30.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 30, 20 )
-text = "DAY"
+text = "DEC"
 valign = 2
 
 [node name="DateLabel" type="Label" parent="Stats/Date"]
@@ -152,7 +154,7 @@ margin_left = 35.0
 margin_right = 80.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 45, 0 )
-text = "/3 MP"
+text = "/5 MP"
 
 [node name="Actions" type="VBoxContainer" parent="."]
 anchor_left = 1.0
@@ -211,7 +213,7 @@ margin_bottom = 68.0
 margin_right = 20.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
-texture = ExtResource( 9 )
+texture = ExtResource( 14 )
 expand = true
 
 [node name="ToDialogue" type="Button" parent="Actions/Play"]
@@ -277,7 +279,7 @@ margin_bottom = 20.0
 margin_right = 20.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
-texture = ExtResource( 7 )
+texture = ExtResource( 4 )
 expand = true
 
 [node name="BuyMode" type="Button" parent="MarketActions/Buy"]
@@ -297,7 +299,7 @@ margin_bottom = 44.0
 margin_right = 20.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
-texture = ExtResource( 7 )
+texture = ExtResource( 13 )
 expand = true
 
 [node name="SellMode" type="Button" parent="MarketActions/Sell"]
@@ -317,7 +319,7 @@ margin_bottom = 68.0
 margin_right = 20.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 expand = true
 
 [node name="LeaveMode" type="Button" parent="MarketActions/Leave"]

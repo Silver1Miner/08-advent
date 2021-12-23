@@ -38,6 +38,7 @@ func set_target_item(item_name: String) -> void:
 	base_value = item_data.get_item_base_price(item_name)
 	current_value = base_value
 	percent = current_value / base_value * 100
+	set_dial_value(base_value)
 
 func _on_value_changed(_value) -> void:
 	calculate_dial_value()
@@ -78,12 +79,12 @@ func customer_decision(percent_value) -> void:
 	randomize()
 	match current_mode:
 		haggle_mode.BUY:
-			if percent_value >= rand_range(90,120):
+			if percent_value >= rand_range(60,100):
 				emit_signal("offer_accepted", current_value)
 			else:
 				emit_signal("offer_countered", current_value)
 		haggle_mode.SELL:
-			if percent_value <= rand_range(80,110):
+			if percent_value <= rand_range(100,140):
 				emit_signal("offer_accepted", current_value)
 			else:
 				emit_signal("offer_countered", current_value)

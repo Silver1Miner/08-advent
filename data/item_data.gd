@@ -15,8 +15,28 @@ var items = {
 		"description": "An important medicine.",
 		"icon": "res://assets/Icons/water.png"
 	},
+	"Bread": {
+		"base_price": 1000,
+		"description": "A staple food.",
+		"icon": "res://assets/Icons/bread.png"
+	},
+	"Cheese": {
+		"base_price": 1500,
+		"description": ".",
+		"icon": "res://assets/Icons/cheese.png"
+	},
+	"Pie": {
+		"base_price": 2000,
+		"description": ".",
+		"icon": "res://assets/Icons/pie.png"
+	},
+	"Gold": {
+		"base_price": 5000,
+		"description": ".",
+		"icon": "res://assets/Icons/coins_gold.png"
+	},
 	"Advent": {
-		"base_price": 4000,
+		"base_price": 5000,
 		"description": "A mysterious combination journal-advent calendar.",
 		"icon": "res://assets/Icons/book_open.png"
 	},

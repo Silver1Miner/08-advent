@@ -147,8 +147,9 @@ __meta__ = {
 }
 
 [node name="LeftProfile" type="TextureRect" parent="."]
+margin_left = 50.0
 margin_top = -300.0
-margin_right = 212.0
+margin_right = 262.0
 mouse_filter = 2
 stretch_mode = 1
 flip_h = true

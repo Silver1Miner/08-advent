@@ -6,17 +6,17 @@ var new_game = false
 var ending := 0 # 1 bad, # 2 true
 var has_worked = false
 var day := 1
-var cash := 4000
+var cash := 1000
 var max_cash := 999999
 var ap := 3
-var mp := 3
+var mp := 5
 var next_scene := 0
 var stats := {
 	"miss_streak": 0,
 	"misses": 0,
 }
 var inventory := {
-	"Medicine": 9,
+	"Medicine": 5,
 	"Advent": 1,
 }
 var collected := {
@@ -28,7 +28,7 @@ var dialogue_scene: PackedScene = preload("res://src/UI/DialogueScene.tscn")
 var hub_scene: PackedScene = preload("res://src/UI/Hub.tscn")
 var main_menu: PackedScene = preload("res://src/Menu/MainMenu.tscn")
 var credits: PackedScene = preload("res://src/UI/TextScroll.tscn")
-var max_days := 8
+var max_days := 6
 
 func _ready() -> void:
 	pass

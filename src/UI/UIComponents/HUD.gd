@@ -16,7 +16,7 @@ func _ready() -> void:
 	update_stat_display()
 
 func update_stat_display() -> void:
-	date_label.text = str(PlayerData.day)
+	date_label.text = str(PlayerData.day + 19)
 	money_label.text = str(PlayerData.cash)
 	ap_label.text = str(PlayerData.ap)
 	mp_label.text = str(PlayerData.mp)
