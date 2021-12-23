@@ -86,7 +86,11 @@ func _on_haggle(item_name, mode) -> void:
 		haggle.set_target_item(item)
 		haggle.visible = true
 		$Shop.visible = false
-		$Textbox/RightProfile.set_texture(load("res://assets/Profiles/oldman.png"))
+		match mode:
+			1:
+				$Textbox/RightProfile.set_texture(load("res://assets/Profiles/oldman.png"))
+			0:
+				$Textbox/RightProfile.set_texture(load("res://assets/Profiles/oldman-mustache.png"))
 	else:
 		$Textbox.play_dialogue(
 			{"0": {"name": "", "profile": "test",
@@ -134,7 +138,7 @@ func _on_offer_countered(value) -> void:
 		haggle_mode.SELL:
 			textbox.play_dialogue( {
 			"0": {"name": "Trader", "profile": "test",
-			"text": "Come on, don't try to gouge me. Could you lower the price?"},})
+			"text": "Don't try to gouge me. I can't afford that. Could you lower the price?"},})
 
 func _on_not_enough_cash() -> void:
 	$Textbox.play_dialogue(

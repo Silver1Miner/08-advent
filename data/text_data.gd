@@ -381,7 +381,7 @@ var credits = [
 		"'Advent' by Jack",
 	],[
 		"ART",
-		"Yanagi Seigen"
+		"Yanagi"
 	],[
 		"Additional CC0 Assets from",
 		"opengameart.org",

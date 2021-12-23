@@ -34,6 +34,15 @@ func _ready() -> void:
 			{"0": {"name": "", "profile": "",
 			"text": "Actions take time, measured in Action Points. The day ends when Action Points are used up."},}
 		)
+	if PlayerData.day >= 6:
+		$Reading.visible = false
+		$Lying.visible = false
+	elif PlayerData.day % 2 == 0:
+		$Reading.visible = false
+		$Lying.visible = true
+	else:
+		$Reading.visible = true
+		$Lying.visible = false
 
 func go_to_dialogue() -> void:
 	if PlayerData.ap >= 2:
