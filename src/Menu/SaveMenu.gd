@@ -11,7 +11,7 @@ func _ready() -> void:
 func load_slot_names() -> void:
 	slot_list.clear()
 	for i in range(5):
-		slot_list.add_item("Entry " + str(i+1) + ", last saved: " + PlayerData.get_save_date(i))
+		slot_list.add_item("Entry " + str(i+1) + ": " + PlayerData.get_save_date(i))
 	save_button.disabled = true
 	load_button.disabled = true
 

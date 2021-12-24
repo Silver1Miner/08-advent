@@ -51,6 +51,7 @@ func go_to_hub() -> void:
 	$TransitionScene.transition_to(PlayerData.hub_scene)
 
 func _on_buy_mode() -> void:
+	AudioManager.play_sound("res://assets/Audio/Sounds/handleCoins.ogg")
 	$Textbox/LeftProfile.texture = null
 	if PlayerData.mp > 0:
 		haggle.visible = false
@@ -63,6 +64,7 @@ func _on_buy_mode() -> void:
 		)
 
 func _on_sell_mode() -> void:
+	AudioManager.play_sound("res://assets/Audio/Sounds/handleCoins.ogg")
 	$Textbox/LeftProfile.texture = null
 	if PlayerData.mp > 0:
 		haggle.visible = false
@@ -108,6 +110,7 @@ func _on_transaction_cancelled() -> void:
 
 func _on_offer_accepted(value) -> void:
 	AudioManager.play_music("res://assets/Audio/The_First_Noel.ogg")
+	AudioManager.play_sound("res://assets/Audio/Sounds/184438__capslok__cash-register-fake.wav")
 	$Textbox/RightProfile.texture = null
 	print("offer accepted at for ", item, "at: ", value)
 	$Textbox.play_dialogue(
@@ -130,6 +133,7 @@ func _on_offer_accepted(value) -> void:
 
 func _on_offer_countered(value) -> void:
 	print("offer made at: ", str(value))
+	AudioManager.play_sound("res://assets/Audio/Sounds/handleCoins2.ogg")
 	match current_mode:
 		haggle_mode.BUY:
 			textbox.play_dialogue( {
@@ -138,9 +142,10 @@ func _on_offer_countered(value) -> void:
 		haggle_mode.SELL:
 			textbox.play_dialogue( {
 			"0": {"name": "Trader", "profile": "test",
-			"text": "Don't try to gouge me. I can't afford that. Could you lower the price?"},})
+			"text": "Don't try to gouge me. Could you lower the price?"},})
 
 func _on_not_enough_cash() -> void:
+	AudioManager.play_sound("res://assets/Audio/Sounds/handleCoins2.ogg")
 	$Textbox.play_dialogue(
 		{"0": {"name": "Trader", "profile": "test",
 		"text": "Don't joke around. I know you don't have that much on you."},}

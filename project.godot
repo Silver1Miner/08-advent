@@ -13,6 +13,9 @@ config_version=4
 config/name="Advent"
 config/description="Fiscal Winter"
 run/main_scene="res://src/Menu/MainMenu.tscn"
+boot_splash/image="res://icon.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
 
@@ -25,7 +28,9 @@ AudioManager="*res://src/Audio/AudioManager.tscn"
 
 window/size/width=640
 window/size/height=400
-window/stretch/mode="2d"
+window/size/test_width=1280
+window/size/test_height=800
+window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
 [input]

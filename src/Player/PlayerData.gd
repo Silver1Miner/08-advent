@@ -1,7 +1,7 @@
 extends Node
 
 var music_db = 0.5
-var sound_db = 0.5
+var sound_db = 0.1
 var new_game = false
 var ending := 0 # 1 bad, # 2 true
 var has_worked = false

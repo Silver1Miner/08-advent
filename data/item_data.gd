@@ -22,17 +22,17 @@ var items = {
 	},
 	"Cheese": {
 		"base_price": 800,
-		"description": ".",
+		"description": "A staple food.",
 		"icon": "res://assets/Icons/cheese.png"
 	},
 	"Pie": {
 		"base_price": 1500,
-		"description": ".",
+		"description": "Popular in the Christmas season.",
 		"icon": "res://assets/Icons/pie.png"
 	},
 	"Gold": {
 		"base_price": 5000,
-		"description": ".",
+		"description": "Very popular in the Christmas season. Also popular after Christmas. And before.",
 		"icon": "res://assets/Icons/coins_gold.png"
 	},
 	"Advent": {

@@ -19,9 +19,6 @@ onready var ten = $Display/Dial/Ten
 onready var ones = $Display/Dial/One
 
 func _ready() -> void:
-	for node in $Display/Dial.get_children():
-		if node.connect("value_changed", self, "_on_value_changed") != OK:
-			push_error("dial connect fail")
 	set_dial_value(base_value)
 
 func set_mode(mode) -> void:
@@ -40,7 +37,7 @@ func set_target_item(item_name: String) -> void:
 	percent = current_value / base_value * 100
 	set_dial_value(base_value)
 
-func _on_value_changed(_value) -> void:
+func _on_value_changed() -> void:
 	calculate_dial_value()
 	percent = current_value / base_value * 100
 	$Display/Percentage.text = str(round(percent)) + "% of Wholesale Price"
@@ -88,3 +85,56 @@ func customer_decision(percent_value) -> void:
 				emit_signal("offer_accepted", current_value)
 			else:
 				emit_signal("offer_countered", current_value)
+
+func _on_HundredThousand_value_changed(value: float) -> void:
+	if value > 9:
+		hundredthousand.set_value(0)
+	elif value < 0:
+		hundredthousand.set_value(9)
+		tenthousand.set_value(tenthousand.get_value() - 1)
+	_on_value_changed()
+
+func _on_TenThousand_value_changed(value: float) -> void:
+	if value > 9:
+		tenthousand.set_value(0)
+		hundredthousand.set_value(hundredthousand.get_value() + 1)
+	elif value < 0:
+		tenthousand.set_value(9)
+		thousand.set_value(thousand.get_value() - 1)
+	_on_value_changed()
+
+func _on_Thousand_value_changed(value: float) -> void:
+	if value > 9:
+		thousand.set_value(0)
+		tenthousand.set_value(tenthousand.get_value() + 1)
+	elif value < 0:
+		thousand.set_value(9)
+		hundred.set_value(hundred.get_value() - 1)
+	_on_value_changed()
+
+func _on_Hundred_value_changed(value: float) -> void:
+	if value > 9:
+		hundred.set_value(0)
+		thousand.set_value(thousand.get_value() + 1)
+	elif value < 0:
+		hundred.set_value(9)
+		ten.set_value(ten.get_value() - 1)
+	_on_value_changed()
+
+
+func _on_Ten_value_changed(value: float) -> void:
+	if value > 9:
+		ten.set_value(0)
+		hundred.set_value(hundred.get_value() + 1)
+	elif value < 0:
+		ten.set_value(9)
+		ones.set_value(ones.get_value() - 1)
+	_on_value_changed()
+
+func _on_One_value_changed(value: float) -> void:
+	if value > 9:
+		ones.set_value(0)
+		ten.set_value(ten.get_value() + 1)
+	elif value < 0:
+		ones.set_value(9)
+	_on_value_changed()
