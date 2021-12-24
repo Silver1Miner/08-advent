@@ -30,11 +30,10 @@ __meta__ = {
 }
 
 [node name="Reading" type="TextureButton" parent="."]
-visible = false
-margin_left = 81.0
-margin_top = 138.0
-margin_right = 222.0
-margin_bottom = 338.0
+margin_left = 93.0
+margin_top = 139.0
+margin_right = 234.0
+margin_bottom = 339.0
 rect_scale = Vector2( 0.6, 0.6 )
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 7 )
@@ -47,16 +46,31 @@ __meta__ = {
 }
 
 [node name="Lying" type="TextureButton" parent="."]
+visible = false
 margin_left = 408.0
 margin_top = 232.0
 margin_right = 742.0
 margin_bottom = 444.0
-rect_scale = Vector2( 0.7, 0.7 )
+rect_scale = Vector2( 0.6, 0.6 )
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 8 )
 texture_hover = ExtResource( 8 )
 texture_disabled = ExtResource( 8 )
 texture_focused = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reading2" type="TextureButton" parent="."]
+visible = false
+margin_left = 67.0
+margin_top = 165.0
+margin_right = 427.0
+margin_bottom = 565.0
+rect_scale = Vector2( 0.24, 0.24 )
+texture_normal = ExtResource( 10 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -73,19 +87,7 @@ texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 9 )
 texture_disabled = ExtResource( 9 )
 texture_focused = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Reading2" type="TextureButton" parent="."]
-margin_left = 69.0
-margin_top = 186.0
-margin_right = 232.0
-margin_bottom = 339.0
-rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 10 )
 expand = true
-stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -95,8 +97,9 @@ __meta__ = {
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 
 [node name="TransitionScene" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [connection signal="pressed" from="Reading" to="." method="_on_Reading_pressed"]
 [connection signal="pressed" from="Lying" to="." method="_on_Lying_pressed"]
-[connection signal="pressed" from="Drawing" to="." method="_on_Drawing_pressed"]
 [connection signal="pressed" from="Reading2" to="." method="_on_Reading2_pressed"]
+[connection signal="pressed" from="Drawing" to="." method="_on_Drawing_pressed"]
