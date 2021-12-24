@@ -91,7 +91,7 @@ func _on_HundredThousand_value_changed(value: float) -> void:
 		hundredthousand.set_value(0)
 	elif value < 0:
 		hundredthousand.set_value(9)
-		tenthousand.set_value(tenthousand.get_value() - 1)
+		#tenthousand.set_value(tenthousand.get_value() - 1)
 	_on_value_changed()
 
 func _on_TenThousand_value_changed(value: float) -> void:
@@ -100,7 +100,7 @@ func _on_TenThousand_value_changed(value: float) -> void:
 		hundredthousand.set_value(hundredthousand.get_value() + 1)
 	elif value < 0:
 		tenthousand.set_value(9)
-		thousand.set_value(thousand.get_value() - 1)
+		hundredthousand.set_value(hundredthousand.get_value() - 1)
 	_on_value_changed()
 
 func _on_Thousand_value_changed(value: float) -> void:
@@ -109,7 +109,7 @@ func _on_Thousand_value_changed(value: float) -> void:
 		tenthousand.set_value(tenthousand.get_value() + 1)
 	elif value < 0:
 		thousand.set_value(9)
-		hundred.set_value(hundred.get_value() - 1)
+		tenthousand.set_value(tenthousand.get_value() - 1)
 	_on_value_changed()
 
 func _on_Hundred_value_changed(value: float) -> void:
@@ -118,7 +118,7 @@ func _on_Hundred_value_changed(value: float) -> void:
 		thousand.set_value(thousand.get_value() + 1)
 	elif value < 0:
 		hundred.set_value(9)
-		ten.set_value(ten.get_value() - 1)
+		thousand.set_value(thousand.get_value() - 1)
 	_on_value_changed()
 
 
@@ -128,7 +128,7 @@ func _on_Ten_value_changed(value: float) -> void:
 		hundred.set_value(hundred.get_value() + 1)
 	elif value < 0:
 		ten.set_value(9)
-		ones.set_value(ones.get_value() - 1)
+		hundred.set_value(hundred.get_value() - 1)
 	_on_value_changed()
 
 func _on_One_value_changed(value: float) -> void:
@@ -137,4 +137,5 @@ func _on_One_value_changed(value: float) -> void:
 		ten.set_value(ten.get_value() + 1)
 	elif value < 0:
 		ones.set_value(9)
+		ten.set_value(ten.get_value() - 1)
 	_on_value_changed()

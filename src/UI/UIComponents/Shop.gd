@@ -33,15 +33,15 @@ var inventory_schedule = {
 	},
 	2: { #Dec21
 	"Medicine": 1,
-	"Bread": 3,"Cheese":2,"Pie":1
+	"Bread": 3,"Cheese":2,"Pie":1,"Mitten":1
 	},
 	3: { #Dec22
 	"Medicine": 2,
-	"Bread": 3,"Cheese":2,"Pie":2
+	"Bread": 3,"Cheese":2,"Pie":2,"Book":1
 	},
 	4: {#Dec23
-	"Medicine": 1,
-	"Bread": 3,"Cheese":2,"Pie":3,"Gold":1
+	"Medicine": 2,
+	"Cheese":2,"Pie":3,"Gold":1,"Mitten":1
 	},
 	5: {#Dec24
 	"Medicine": 0,

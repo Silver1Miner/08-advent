@@ -35,6 +35,16 @@ var items = {
 		"description": "Very popular in the Christmas season. Also popular after Christmas. And before.",
 		"icon": "res://assets/Icons/coins_gold.png"
 	},
+	"Book": {
+		"base_price": 1800,
+		"description": "A thick leather bound history book.",
+		"icon": "res://assets/Icons/book_07.png"
+	},
+	"Mitten": {
+		"base_price": 3000,
+		"description": "Very useful for keeping warm in the winter cold.",
+		"icon": "res://assets/Icons/mitten.png"
+	},
 	"Advent": {
 		"base_price": 5000,
 		"description": "A mysterious combination journal-advent calendar.",

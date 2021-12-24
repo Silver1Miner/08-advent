@@ -97,7 +97,6 @@ __meta__ = {
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 
 [node name="TransitionScene" parent="." instance=ExtResource( 5 )]
-visible = false
 
 [connection signal="pressed" from="Reading" to="." method="_on_Reading_pressed"]
 [connection signal="pressed" from="Lying" to="." method="_on_Lying_pressed"]
