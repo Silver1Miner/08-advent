@@ -35,12 +35,13 @@ func _ready() -> void:
 		push_error("UI signal connect fail")
 	if PlayerData.day == 1 and PlayerData.ap >= 2:
 		$Textbox.play_dialogue(
-			{"0": {"name": "Trader", "profile": "oldman",
-			"text": "At each market session you have enough time to make five trades. Use your time wisely."},}
+			{"0": {"name": "Old Man", "profile": "oldman",
+			"text": "Welcome to the market. At each market session you have enough time to make five trades. Use your time wisely."},
+			}
 		)
 	else:
 		$Textbox.play_dialogue(
-			{"0": {"name": "Trader", "profile": "oldman",
+			{"0": {"name": "Old Man", "profile": "oldman",
 			"text": "Welcome to the Open Market. Haggle away."},}
 		)
 
@@ -103,8 +104,8 @@ func _on_transaction_cancelled() -> void:
 	AudioManager.play_music("res://assets/Audio/The_First_Noel.ogg")
 	$Textbox/RightProfile.texture = null
 	$Textbox.play_dialogue(
-		{"0": {"name": "Trader", "profile": "oldman",
-		"text": "Disappointing that we couldn't make a deal this time. Ah, but there's always next time."},}
+		{"0": {"name": "Old Man", "profile": "oldman",
+		"text": "Too bad you couldn't make a deal. Ah, but there's always next time."},}
 	)
 	haggle.visible = false
 
@@ -112,10 +113,10 @@ func _on_offer_accepted(value) -> void:
 	AudioManager.play_music("res://assets/Audio/The_First_Noel.ogg")
 	AudioManager.play_sound("res://assets/Audio/Sounds/184438__capslok__cash-register-fake.wav")
 	$Textbox/RightProfile.texture = null
-	print("offer accepted at for ", item, "at: ", value)
+	#print("offer accepted at for ", item, "at: ", value)
 	$Textbox.play_dialogue(
-		{"0": {"name": "Trader", "profile": "oldman",
-		"text": "Pleasure doing business with you."},}
+		{"0": {"name": "Old Man", "profile": "oldman",
+		"text": "Congratulations on making a deal."},}
 	)
 	match current_mode:
 		haggle_mode.BUY:
@@ -137,19 +138,20 @@ func _on_offer_countered(value) -> void:
 	match current_mode:
 		haggle_mode.BUY:
 			textbox.play_dialogue( {
-			"0": {"name": "Trader", "profile": "test",
+			"0": {"name": "Old Man", "profile": "test",
 			"text": "This is quality stuff. Could you offer a bit more?"},})
 		haggle_mode.SELL:
 			textbox.play_dialogue( {
-			"0": {"name": "Trader", "profile": "test",
-			"text": "Don't try to gouge me. Could you lower the price?"},})
+			"0": {"name": "Not the Old Man", "profile": "test",
+			"text": "Hmm... Could you lower the price a little?"},})
 
 func _on_not_enough_cash() -> void:
 	AudioManager.play_sound("res://assets/Audio/Sounds/handleCoins2.ogg")
 	$Textbox.play_dialogue(
-		{"0": {"name": "Trader", "profile": "test",
+		{"0": {"name": "Old Man", "profile": "test",
 		"text": "Don't joke around. I know you don't have that much on you."},}
 	)
 
 func _on_text_finished() -> void:
-	print("text finished")
+	pass
+	#print("text finished")

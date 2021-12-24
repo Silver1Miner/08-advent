@@ -4,7 +4,7 @@ func _ready() -> void:
 	if AudioManager.stream != preload("res://assets/Audio/In_the_Bleak_Midwinter.ogg"):
 		AudioManager.play_music("res://assets/Audio/In_the_Bleak_Midwinter.ogg")
 	if PlayerData.day == PlayerData.max_days:
-		if PlayerData.stats["misses"] == 0:
+		if PlayerData.stats["misses"] == 0 and PlayerData.stats["plays"] >= 5:
 			PlayerData.ending = 2
 			PlayerData.next_scene = 20
 		else:
@@ -40,7 +40,7 @@ func _ready() -> void:
 			"3": {"name": "", "profile": "",
 			"text": "Working takes 2 AP. It is a guaranteed way to make more cash."},
 		})
-	if PlayerData.day >= 6:
+	if PlayerData.day >= 6 or PlayerData.stats["misses"] >= 3:
 		$Reading.visible = false
 		$Lying.visible = false
 		$Drawing.visible = false
@@ -70,6 +70,7 @@ func go_to_dialogue() -> void:
 	if PlayerData.ap >= 2:
 		PlayerData.next_scene = PlayerData.day
 		PlayerData.ap -= 1 # other 1 substracted at end of dialogue scene
+		PlayerData.stats["plays"] += 1
 		$HUD.update_stat_display()
 		$TransitionScene.transition_to(PlayerData.dialogue_scene)
 
@@ -99,7 +100,6 @@ func end_day() -> void:
 		PlayerData.next_scene = -2
 	else:
 		PlayerData.stats["misses"] += 1
-		PlayerData.ending = 1
 		PlayerData.next_scene = -3
 	$TransitionScene.transition_to(PlayerData.dialogue_scene)
 

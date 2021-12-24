@@ -72,7 +72,7 @@ func _on_Offer_pressed() -> void:
 	customer_decision(percent)
 
 func customer_decision(percent_value) -> void:
-	print("percent base: ", str(percent_value))
+	#print("percent base: ", str(percent_value))
 	randomize()
 	match current_mode:
 		haggle_mode.BUY:

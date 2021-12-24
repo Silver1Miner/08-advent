@@ -55,10 +55,10 @@ func remove_inventory(item: String) -> void:
 
 func _on_item_selected(item: String) -> void:
 	current_item = item
-	print("selected ", item)
+	#print("selected ", item)
 
 func _on_Accept_pressed() -> void:
-	print("try to buy/sell ", current_item)
+	#print("try to buy/sell ", current_item)
 	emit_signal("haggle_item", current_item, current_mode)
 
 func _on_Cancel_pressed() -> void:

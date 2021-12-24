@@ -157,6 +157,7 @@ rect_min_size = Vector2( 45, 0 )
 text = "/5 MP"
 
 [node name="Actions" type="VBoxContainer" parent="."]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -140.0
@@ -262,17 +263,17 @@ rect_min_size = Vector2( 110, 20 )
 text = "Advent Journal"
 
 [node name="MarketActions" type="VBoxContainer" parent="."]
-visible = false
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -124.0
-margin_bottom = 40.0
+margin_left = -108.0
+margin_top = 2.0
+margin_bottom = 70.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Buy" type="HBoxContainer" parent="MarketActions"]
-margin_right = 124.0
+margin_right = 108.0
 margin_bottom = 20.0
 
 [node name="BuyIcon" type="TextureRect" parent="MarketActions/Buy"]
@@ -284,15 +285,15 @@ expand = true
 
 [node name="BuyMode" type="Button" parent="MarketActions/Buy"]
 margin_left = 24.0
-margin_right = 124.0
+margin_right = 104.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 100, 20 )
+rect_min_size = Vector2( 80, 20 )
 toggle_mode = true
 text = "Buy"
 
 [node name="Sell" type="HBoxContainer" parent="MarketActions"]
 margin_top = 24.0
-margin_right = 124.0
+margin_right = 108.0
 margin_bottom = 44.0
 
 [node name="SellIcon" type="TextureRect" parent="MarketActions/Sell"]
@@ -304,15 +305,15 @@ expand = true
 
 [node name="SellMode" type="Button" parent="MarketActions/Sell"]
 margin_left = 24.0
-margin_right = 124.0
+margin_right = 104.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 100, 20 )
+rect_min_size = Vector2( 80, 20 )
 toggle_mode = true
 text = "Sell"
 
 [node name="Leave" type="HBoxContainer" parent="MarketActions"]
 margin_top = 48.0
-margin_right = 124.0
+margin_right = 108.0
 margin_bottom = 68.0
 
 [node name="LeaveIcon" type="TextureRect" parent="MarketActions/Leave"]
@@ -324,9 +325,9 @@ expand = true
 
 [node name="LeaveMode" type="Button" parent="MarketActions/Leave"]
 margin_left = 24.0
-margin_right = 124.0
+margin_right = 103.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 100, 20 )
+rect_min_size = Vector2( 79, 20 )
 toggle_mode = true
 text = "Leave"
 
