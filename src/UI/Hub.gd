@@ -32,17 +32,39 @@ func _ready() -> void:
 	if PlayerData.day == 1 and PlayerData.ap == 3:
 		$Textbox.play_dialogue(
 			{"0": {"name": "", "profile": "",
-			"text": "Actions take time, measured in Action Points. The day ends when Action Points are used up."},}
-		)
+			"text": "Actions take time, measured in Action Points. The day ends when the 3 AP are used up."},
+			"1": {"name": "", "profile": "",
+			"text": "Going to the market takes 1 AP. It is the only place to buy more medicine."},
+			"2": {"name": "", "profile": "",
+			"text": "Playing takes 2 AP. Spending time with Natalie is good for her health."},
+			"3": {"name": "", "profile": "",
+			"text": "Working takes 2 AP. It is a guaranteed way to make more cash."},
+		})
 	if PlayerData.day >= 6:
 		$Reading.visible = false
 		$Lying.visible = false
-	elif PlayerData.day % 2 == 0:
+		$Drawing.visible = false
+		$Reading2.visible = false
+	elif PlayerData.day == 2:
 		$Reading.visible = false
 		$Lying.visible = true
+		$Drawing.visible = false
+		$Reading2.visible = false
+	elif PlayerData.day == 3:
+		$Reading.visible = false
+		$Lying.visible = false
+		$Drawing.visible = true
+		$Reading2.visible = false
+	elif PlayerData.day == 4:
+		$Reading.visible = false
+		$Lying.visible = false
+		$Drawing.visible = false
+		$Reading2.visible = true
 	else:
 		$Reading.visible = true
 		$Lying.visible = false
+		$Drawing.visible = false
+		$Reading2.visible = false
 
 func go_to_dialogue() -> void:
 	if PlayerData.ap >= 2:
@@ -80,3 +102,28 @@ func end_day() -> void:
 		PlayerData.ending = 1
 		PlayerData.next_scene = -3
 	$TransitionScene.transition_to(PlayerData.dialogue_scene)
+
+
+func _on_Reading_pressed() -> void:
+	$Textbox.play_dialogue(
+			{"0": {"name": "", "profile": "",
+			"text": "Natalie always did love reading. She's probably read more books than I have."},}
+		)
+
+func _on_Lying_pressed() -> void:
+	$Textbox.play_dialogue(
+			{"0": {"name": "", "profile": "",
+			"text": "Recently Natalie has had a lot of fun learning to play a sort of three player chess game."},}
+		)
+
+func _on_Drawing_pressed() -> void:
+	$Textbox.play_dialogue(
+			{"0": {"name": "", "profile": "",
+			"text": "Natalie was always very creative, constantly writing or drawing something."},}
+		)
+
+func _on_Reading2_pressed() -> void:
+	$Textbox.play_dialogue(
+			{"0": {"name": "", "profile": "",
+			"text": "Natalie always did love reading. She's probably read more books than I have."},}
+		)

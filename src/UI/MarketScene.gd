@@ -87,9 +87,9 @@ func _on_haggle(item_name, mode) -> void:
 		haggle.visible = true
 		$Shop.visible = false
 		match mode:
-			1:
-				$Textbox/RightProfile.set_texture(load("res://assets/Profiles/oldman.png"))
 			0:
+				$Textbox/RightProfile.set_texture(load("res://assets/Profiles/oldman.png"))
+			1:
 				$Textbox/RightProfile.set_texture(load("res://assets/Profiles/oldman-mustache.png"))
 	else:
 		$Textbox.play_dialogue(

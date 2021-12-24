@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
 [ext_resource path="res://src/UI/Hub.gd" type="Script" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://assets/Backgrounds/room.jpg" type="Texture" id=6]
 [ext_resource path="res://assets/Profiles/reading.png" type="Texture" id=7]
 [ext_resource path="res://assets/Profiles/lying.png" type="Texture" id=8]
+[ext_resource path="res://assets/Profiles/drawing.png" type="Texture" id=9]
+[ext_resource path="res://assets/Profiles/reading2.png" type="Texture" id=10]
 
 [node name="Hub" type="Control"]
 anchor_right = 1.0
@@ -27,17 +29,74 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Reading" type="TextureButton" parent="."]
+visible = false
+margin_left = 81.0
+margin_top = 138.0
+margin_right = 222.0
+margin_bottom = 338.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lying" type="TextureButton" parent="."]
+margin_left = 408.0
+margin_top = 232.0
+margin_right = 742.0
+margin_bottom = 444.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 8 )
+texture_disabled = ExtResource( 8 )
+texture_focused = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Drawing" type="TextureButton" parent="."]
+visible = false
+margin_left = 109.0
+margin_top = 233.0
+margin_right = 350.0
+margin_bottom = 433.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
+texture_disabled = ExtResource( 9 )
+texture_focused = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reading2" type="TextureButton" parent="."]
+margin_left = 69.0
+margin_top = 186.0
+margin_right = 232.0
+margin_bottom = 339.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 10 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Textbox" parent="." instance=ExtResource( 4 )]
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 
-[node name="Reading" type="Sprite" parent="."]
-position = Vector2( 120, 194 )
-scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 7 )
-
-[node name="Lying" type="Sprite" parent="."]
-position = Vector2( 508, 321 )
-texture = ExtResource( 8 )
-
 [node name="TransitionScene" parent="." instance=ExtResource( 5 )]
+
+[connection signal="pressed" from="Reading" to="." method="_on_Reading_pressed"]
+[connection signal="pressed" from="Lying" to="." method="_on_Lying_pressed"]
+[connection signal="pressed" from="Drawing" to="." method="_on_Drawing_pressed"]
+[connection signal="pressed" from="Reading2" to="." method="_on_Reading2_pressed"]

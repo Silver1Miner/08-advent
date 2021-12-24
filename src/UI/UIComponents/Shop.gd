@@ -29,22 +29,22 @@ func set_mode(mode) -> void:
 var inventory_schedule = {
 	1: { # day, Dec 20
 		"Medicine": 1,
-		"Bread": 3,"Cheese": 0,"Pie":0
+		"Bread": 3,"Cheese": 2,"Pie":0
 	},
 	2: { #Dec21
 	"Medicine": 1,
-	"Bread": 3,"Cheese":2,"Pie":0
+	"Bread": 3,"Cheese":2,"Pie":1
 	},
 	3: { #Dec22
-	"Medicine": 1,
-	"Bread": 3,"Cheese":2,"Pie":0
+	"Medicine": 2,
+	"Bread": 3,"Cheese":2,"Pie":2
 	},
 	4: {#Dec23
 	"Medicine": 1,
 	"Bread": 3,"Cheese":2,"Pie":3,"Gold":1
 	},
 	5: {#Dec24
-	"Medicine": 1,
+	"Medicine": 0,
 	"Bread": 3,"Cheese":2,"Pie":1,"Gold":1
 	},
 }

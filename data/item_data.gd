@@ -16,17 +16,17 @@ var items = {
 		"icon": "res://assets/Icons/water.png"
 	},
 	"Bread": {
-		"base_price": 1000,
+		"base_price": 500,
 		"description": "A staple food.",
 		"icon": "res://assets/Icons/bread.png"
 	},
 	"Cheese": {
-		"base_price": 1500,
+		"base_price": 800,
 		"description": ".",
 		"icon": "res://assets/Icons/cheese.png"
 	},
 	"Pie": {
-		"base_price": 2000,
+		"base_price": 1500,
 		"description": ".",
 		"icon": "res://assets/Icons/pie.png"
 	},
