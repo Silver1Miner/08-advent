@@ -39,6 +39,7 @@ func _on_ToDialogue_pressed() -> void:
 
 func _on_OpenSave_pressed() -> void:
 	$SaveMenu.visible = true
+	$SaveMenu.load_slot_names()
 
 func _on_LeaveMode_pressed() -> void:
 	emit_signal("to_hub")
