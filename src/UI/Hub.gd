@@ -29,6 +29,42 @@ func _ready() -> void:
 		push_error("fail to connect market signal")
 	if $HUD.connect("to_work", self, "go_to_work") != OK:
 		push_error("fail to connect work signal")
+	$Skull1.visible = false
+	$Skull2.visible = false
+	$Skull3.visible = false
+	if PlayerData.day >= 6 or PlayerData.stats["misses"] >= 3:
+		$Reading.visible = false
+		$Lying.visible = false
+		$Drawing.visible = false
+		$Reading2.visible = false
+	elif PlayerData.day == 2:
+		$Reading.visible = false
+		$Lying.visible = true
+		$Drawing.visible = false
+		$Reading2.visible = false
+		if PlayerData.stats["misses"] > 0:
+			$Skull1.visible = true
+	elif PlayerData.day == 3:
+		$Reading.visible = false
+		$Lying.visible = false
+		$Drawing.visible = true
+		$Reading2.visible = false
+		if PlayerData.stats["misses"] > 0:
+			$Skull3.visible = true
+	elif PlayerData.day == 4:
+		$Reading.visible = false
+		$Lying.visible = false
+		$Drawing.visible = false
+		$Reading2.visible = true
+		if PlayerData.stats["misses"] > 0:
+			$Skull2.visible = true
+	else:
+		$Reading.visible = true
+		$Lying.visible = false
+		$Drawing.visible = false
+		$Reading2.visible = false
+		if PlayerData.stats["misses"] > 0:
+			$Skull2.visible = true
 	if PlayerData.day == 1 and PlayerData.ap == 3:
 		$Textbox.play_dialogue(
 			{"0": {"name": "", "profile": "",
@@ -40,31 +76,7 @@ func _ready() -> void:
 			"3": {"name": "", "profile": "",
 			"text": "Working takes 2 AP. It is a guaranteed way to make more cash."},
 		})
-	if PlayerData.day >= 6 or PlayerData.stats["misses"] >= 3:
-		$Reading.visible = false
-		$Lying.visible = false
-		$Drawing.visible = false
-		$Reading2.visible = false
-	elif PlayerData.day == 2:
-		$Reading.visible = false
-		$Lying.visible = true
-		$Drawing.visible = false
-		$Reading2.visible = false
-	elif PlayerData.day == 3:
-		$Reading.visible = false
-		$Lying.visible = false
-		$Drawing.visible = true
-		$Reading2.visible = false
-	elif PlayerData.day == 4:
-		$Reading.visible = false
-		$Lying.visible = false
-		$Drawing.visible = false
-		$Reading2.visible = true
-	else:
-		$Reading.visible = true
-		$Lying.visible = false
-		$Drawing.visible = false
-		$Reading2.visible = false
+
 
 func go_to_dialogue() -> void:
 	if PlayerData.ap >= 2:

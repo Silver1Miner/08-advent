@@ -31,12 +31,14 @@ func _ready() -> void:
 	pass
 
 func load_player_data(data: Dictionary) -> void:
-	cash = data["cash"]
-	stats = data["stats"]
-	inventory = data["inventory"]
-	day = data["day"]
-	ap = data["ap"]
+	current_save = data.duplicate(true)
 	print(data)
+	cash = current_save["cash"]
+	stats = current_save["stats"]
+	inventory = current_save["inventory"]
+	day = current_save["day"]
+	ap = current_save["ap"]
+	print(current_save)
 
 func save_player_data() -> void:
 	current_save["cash"] = cash
@@ -58,8 +60,7 @@ var current_save = {
 	"day": 1,
 	"ap": 3,
 }
-
-var default_save = {
+const default_save = {
 	"cash": 1000,
 	"stats": {
 		"miss_streak": 0,

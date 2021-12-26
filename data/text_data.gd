@@ -369,5 +369,7 @@ var credits = [
 		"TOOLS",
 		"Godot",
 		"Krita",
+	],[
+		"For 'Natalie'"
 	]
 ]

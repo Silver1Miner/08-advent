@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/theme/UI.tres" type="Theme" id=1]
 [ext_resource path="res://src/UI/Hub.gd" type="Script" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://assets/Profiles/lying.png" type="Texture" id=8]
 [ext_resource path="res://assets/Profiles/drawing.png" type="Texture" id=9]
 [ext_resource path="res://assets/Profiles/reading2.png" type="Texture" id=10]
+[ext_resource path="res://assets/Effects/skull2.png" type="Texture" id=11]
+[ext_resource path="res://assets/Effects/skull3.png" type="Texture" id=12]
+[ext_resource path="res://assets/Effects/skull1.png" type="Texture" id=13]
 
 [node name="Hub" type="Control"]
 anchor_right = 1.0
@@ -45,8 +48,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Skull2" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.0627451 )
+position = Vector2( 92, 153 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 11 )
+
 [node name="Lying" type="TextureButton" parent="."]
-visible = false
 margin_left = 408.0
 margin_top = 232.0
 margin_right = 742.0
@@ -62,8 +70,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Skull1" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.0352941 )
+position = Vector2( 407, 308 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 13 )
+
 [node name="Reading2" type="TextureButton" parent="."]
-visible = false
 margin_left = 67.0
 margin_top = 165.0
 margin_right = 427.0
@@ -76,7 +89,6 @@ __meta__ = {
 }
 
 [node name="Drawing" type="TextureButton" parent="."]
-visible = false
 margin_left = 109.0
 margin_top = 233.0
 margin_right = 350.0
@@ -91,6 +103,13 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Skull3" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.0705882 )
+position = Vector2( 241, 328 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 12 )
+flip_h = true
 
 [node name="Textbox" parent="." instance=ExtResource( 4 )]
 
